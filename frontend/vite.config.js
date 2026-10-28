@@ -16,6 +16,16 @@ const spaFallback = () => ({
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), spaFallback()],
+  build: {
+    rollupOptions: {
+      output: {
+        // libraries change rarely: their own file stays cached across app updates
+        manualChunks(id) {
+          if (id.includes('node_modules')) return 'vendor'
+        },
+      },
+    },
+  },
   server: {
     proxy: {
       '/api': 'http://localhost:5000',

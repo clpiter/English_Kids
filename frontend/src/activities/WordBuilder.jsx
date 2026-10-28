@@ -3,6 +3,7 @@ import { useT } from '../useT'
 import ProgressBar from '../components/ProgressBar'
 import GameNav from '../components/GameNav'
 import HintButton from '../components/HintButton'
+import Sparkles from '../components/Sparkles'
 import { isSpellable, pickTargets, shuffle } from '../utils/questions'
 import { playCorrect, playWrong } from '../utils/sounds'
 import { speak, speakEn, speakWord } from '../utils/speech'
@@ -108,6 +109,7 @@ function Round({ word, intro, retry, result, onDone }) {
 
       {done && (
         <div className={`feedback pop-in ${result && !result.correct ? 'bad' : 'good'}`}>
+          {!(result && !result.correct) && <Sparkles />}
           <span className="feedback-title">
             {result && !result.correct ? <>🤔 {t('wrongLetters')}: {result.chosen}</> : <>🎉 {t('correct')}</>}
           </span>

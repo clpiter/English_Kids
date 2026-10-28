@@ -16,6 +16,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="English Masti" />
 
+    <!-- start early: the app content file, and the backend (wakes it up if it is sleeping) -->
+    <link rel="preload" href="/data/content.json" as="fetch" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://english-kids-rr7u.onrender.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- loaded without blocking, so the app still starts on a slow or offline network -->

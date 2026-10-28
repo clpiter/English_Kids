@@ -17,12 +17,19 @@ const { book } = require(path.join(data, 'book'));
 const { loadImageCredits } = require(path.join(data, 'imageCredits'));
 
 const images = loadImageCredits();
+const PUBLIC = path.join(__dirname, '..', '..', 'frontend', 'public');
+// small WebP copy made by scripts/make-thumbs.js (used for tiles, chips and cards)
+const thumbFor = (file) => {
+  if (!file) return '';
+  const thumb = file.replace(/^\/images\//, '/images/sm/').replace(/\.\w+$/, '.webp');
+  return fs.existsSync(path.join(PUBLIC, thumb)) ? thumb : '';
+};
 const content = {
   categories,
   // same order and fields as GET /api/words
   words: [...words]
     .sort((a, b) => a.category.localeCompare(b.category) || a.order - b.order)
-    .map((w) => ({ ...w, image: images[w.key]?.file || '' })),
+    .map((w) => ({ ...w, image: images[w.key]?.file || '', thumb: thumbFor(images[w.key]?.file) })),
   stories,
   glossary,
   book,

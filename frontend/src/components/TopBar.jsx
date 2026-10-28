@@ -3,6 +3,7 @@ import { setLang, toggleTheme } from '../store/uiSlice'
 import { go, useNav } from '../nav'
 import { selectCurrentProfile, selectProfile } from '../store/profileSlice'
 import { useT } from '../useT'
+import CountUp from './CountUp'
 
 // small screens: one button that goes हिंदी → दोनों → English
 const LANG_CYCLE = { hi: 'both', both: 'en', en: 'hi' }
@@ -64,7 +65,9 @@ export default function TopBar() {
               {profile.avatar}
             </span>
             <span className="kid-chip-name">{profile.name}</span>
-            <span className="kid-chip-stars">⭐ {profile.stars}</span>
+            <span className="kid-chip-stars" key={profile.stars}>
+              ⭐ <CountUp value={profile.stars} />
+            </span>
             <button
               className="kid-chip-switch"
               title={ts('switchKid')}

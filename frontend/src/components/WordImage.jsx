@@ -14,12 +14,18 @@ const COLORS = {
   pink: '#f48fb1',
 }
 
+// sizes small enough for the ~320px WebP copy
+const SMALL_SIZES = ['sm', 'xs', 'fill']
+
 const NUMBERS = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10 }
 
 // Picture for a word: a real photo, a colour swatch (colours) or counted apples (numbers).
 // size: xl (flash card), lg (game prompt), fill (fills its parent), sm (word chip), xs (inline)
 export default function WordImage({ word, size = 'lg' }) {
-  const applePhoto = useSelector((s) => s.words.list.find((w) => w.key === 'fruits:apple')?.image)
+  const applePhoto = useSelector((s) => {
+    const apple = s.words.list.find((w) => w.key === 'fruits:apple')
+    return apple?.thumb || apple?.image
+  })
   const [broken, setBroken] = useState(false)
   const cls = `word-img wi-${size}`
 
@@ -48,10 +54,21 @@ export default function WordImage({ word, size = 'lg' }) {
   }
 
   if (word.image && !broken) {
+    // small places get the small WebP copy (much faster); flash cards and prompts the full photo
+    const small = SMALL_SIZES.includes(size) && word.thumb
+    const src = small ? word.thumb : word.image
     // whole photo is shown (never cropped); a blurred copy fills the empty space around it
     return (
-      <span className={`${cls} photo`} style={{ '--photo': `url("${word.image}")` }}>
-        <img src={word.image} alt={word.en} loading="lazy" draggable="false" onError={() => setBroken(true)} />
+      <span className={`${cls} photo`} style={{ '--photo': `url("${word.thumb || word.image}")` }}>
+        <img
+          src={src}
+          alt={word.en}
+          loading="lazy"
+          decoding="async"
+          draggable="false"
+          onLoad={(e) => e.currentTarget.classList.add('loaded')}
+          onError={() => setBroken(true)}
+        />
       </span>
     )
   }

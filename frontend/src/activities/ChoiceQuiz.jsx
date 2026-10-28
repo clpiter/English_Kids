@@ -5,6 +5,7 @@ import Instruction from '../components/Instruction'
 import WordImage from '../components/WordImage'
 import GameNav from '../components/GameNav'
 import HintButton from '../components/HintButton'
+import Sparkles from '../components/Sparkles'
 import { buildQuestion, buildQuestions } from '../utils/questions'
 import { playCorrect, playWrong } from '../utils/sounds'
 import { speak, speakEn, speakWord } from '../utils/speech'
@@ -238,6 +239,7 @@ export default function ChoiceQuiz({ mode, pool, all, profile, onFinish }) {
 
       {answered && (
         <div className={`feedback pop-in ${answer.correct ? 'good' : 'bad'}`}>
+          {answer.correct && <Sparkles />}
           <span className="feedback-title">{answer.correct ? <>🎉 {t('correct')}</> : <>🤔 {t('wrong')}</>}</span>
           <button className="feedback-word" onClick={() => speakWord(q.word)}>
             <WordImage word={q.word} size="xs" />

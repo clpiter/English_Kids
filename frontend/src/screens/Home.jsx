@@ -3,6 +3,7 @@ import { go, useNav } from '../nav'
 import { useT } from '../useT'
 import ProgressBar from '../components/ProgressBar'
 import CategoryCover from '../components/CategoryCover'
+import CountUp from '../components/CountUp'
 import { getPool } from '../utils/questions'
 import { VOICE, useAnnounce } from '../utils/voice'
 
@@ -30,7 +31,7 @@ export default function Home({ profile }) {
         </div>
         <div className="stat-row">
           <div className="stat">
-            <span className="stat-num">⭐ {profile.stars}</span>
+            <span className="stat-num">⭐ <CountUp value={profile.stars} /></span>
             <span className="stat-label">{t('stars')}</span>
           </div>
           <div className="stat">
@@ -38,7 +39,7 @@ export default function Home({ profile }) {
             <span className="stat-label">{t('streak')}</span>
           </div>
           <div className="stat">
-            <span className="stat-num">📚 {learned.size}</span>
+            <span className="stat-num">📚 <CountUp value={learned.size} /></span>
             <span className="stat-label">{t('wordsLearned')}</span>
           </div>
         </div>

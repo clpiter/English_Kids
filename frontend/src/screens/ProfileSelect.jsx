@@ -8,6 +8,7 @@ export default function ProfileSelect() {
   const dispatch = useDispatch()
   const nav = useNav()
   const profiles = useSelector((s) => s.profiles.list)
+  const loading = useSelector((s) => s.profiles.status === 'loading' || s.profiles.status === 'idle')
   const { t, ts } = useT()
 
   useAnnounce(profiles.length ? VOICE.profiles : VOICE.profilesEmpty)
@@ -29,7 +30,17 @@ export default function ProfileSelect() {
         <p className="muted">{t('tagline')}</p>
       </div>
 
-      {profiles.length === 0 && <p className="center muted">{t('noKids')}</p>}
+      {profiles.length === 0 && loading && (
+        <>
+          <p className="center muted">{t('loadingKids')}</p>
+          <div className="profile-grid">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="profile-card skeleton" />
+            ))}
+          </div>
+        </>
+      )}
+      {profiles.length === 0 && !loading && <p className="center muted">{t('noKids')}</p>}
 
       <div className="profile-grid">
         {profiles.map((p) => (

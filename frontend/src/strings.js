@@ -3,6 +3,10 @@ export const STRINGS = {
   appName: { en: 'English Masti', hi: 'अंग्रेज़ी मस्ती' },
   tagline: { en: 'Learn English with fun!', hi: 'खेल-खेल में अंग्रेज़ी सीखो!' },
   whoIsLearning: { en: 'Who is learning today?', hi: 'आज कौन सीख रहा है?' },
+  loadingKids: {
+    en: 'Getting the kids… (the first time can take a little while)',
+    hi: 'बच्चों की सूची आ रही है… (पहली बार थोड़ा समय लग सकता है)',
+  },
   noKids: { en: 'No kids yet. Add the first one!', hi: 'अभी कोई बच्चा नहीं है। पहला जोड़ो!' },
   addKid: { en: 'Add a kid', hi: 'नया बच्चा जोड़ो' },
   newKid: { en: 'New kid', hi: 'नया बच्चा' },
