@@ -1,0 +1,1550 @@
+{
+  "animals:dog": {
+    "file": "/images/animals/dog.jpg",
+    "title": "Huskiesatrest.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Huskiesatrest.jpg",
+    "artist": "M. Rehemtulla",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "animals:cat": {
+    "file": "/images/animals/cat.jpg",
+    "title": "Siam_lilacpoint.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Siam_lilacpoint.jpg",
+    "artist": "Karin Langner-Bahmann, upload von Martin Bahmann",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "animals:cow": {
+    "file": "/images/animals/cow.jpg",
+    "title": "Cow_(Fleckvieh_breed)_Oeschinensee_Slaunger_2009-07-07.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Cow_(Fleckvieh_breed)_Oeschinensee_Slaunger_2009-07-07.jpg",
+    "artist": "Kim Hansen",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "animals:lion": {
+    "file": "/images/animals/lion.jpg",
+    "title": "020_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:020_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg",
+    "artist": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "animals:tiger": {
+    "file": "/images/animals/tiger.jpg",
+    "title": "Bengal_tiger_(Panthera_tigris_tigris)_female_3_crop.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Bengal_tiger_(Panthera_tigris_tigris)_female_3_crop.jpg",
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "animals:elephant": {
+    "file": "/images/animals/elephant.jpg",
+    "title": "African_Bush_Elephant.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:African_Bush_Elephant.jpg",
+    "artist": "Muhammad Mahdi Karim Facebook The making of this document was supported by Wikimedia CH. (Submit your project!) For all the files concerned, please see the category Supported by Wikimedia CH. العربية ∙ বাংলা ∙ čeština ∙ Deutsch ∙ English ∙ Esperanto ∙ español ∙ français ∙ galego ∙ हिन्दी ∙ magyar ∙ italiano ∙ 日本語 ∙ македонски ∙ Nederlands ∙ português do Brasil ∙ rumantsch ∙ русский ∙ sicilianu ∙ slovenščina ∙ தமிழ் ∙ українська ∙ 中文 ∙ +/−",
+    "license": "GFDL 1.2",
+    "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html"
+  },
+  "animals:monkey": {
+    "file": "/images/animals/monkey.jpg",
+    "title": "Ubud_Monkey_Family.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ubud_Monkey_Family.jpg",
+    "artist": "Deerpeter",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "animals:horse": {
+    "file": "/images/animals/horse.jpg",
+    "title": "Nokota_Horses_cropped.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Nokota_Horses_cropped.jpg",
+    "artist": "Nokota_Horses.jpg: François Marchal derivative work: Dana boomer (talk)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "animals:fish": {
+    "file": "/images/animals/fish.jpg",
+    "title": "Balantiocheilos_melanopterus_-_Karlsruhe_Zoo_02_(cropped).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Balantiocheilos_melanopterus_-_Karlsruhe_Zoo_02_(cropped).jpg",
+    "artist": "H. Zell",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "animals:bird": {
+    "file": "/images/animals/bird.jpg",
+    "title": "Kleiber_Flug.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Kleiber_Flug.jpg",
+    "artist": "C. Robiller / naturlichter.de (Hyla meridionalis)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "animals:rabbit": {
+    "file": "/images/animals/rabbit.jpg",
+    "title": "Oryctolagus_cuniculus_Rcdo.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Oryctolagus_cuniculus_Rcdo.jpg",
+    "artist": "JM Ligero Loarte",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+  },
+  "animals:goat": {
+    "file": "/images/animals/goat.jpg",
+    "title": "Hausziege_04.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Hausziege_04.jpg",
+    "artist": "Kuebi = Armin Kübelbeck",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "animals:duck": {
+    "file": "/images/animals/duck.jpg",
+    "title": "Bucephala-albeola-010.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Bucephala-albeola-010.jpg",
+    "artist": "Mdf",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "animals:mouse": {
+    "file": "/images/animals/mouse.jpg",
+    "title": "Mouse_white_background.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Mouse_white_background.jpg",
+    "artist": "Unknown authorUnknown author (original) / Ilmari Karonen (editing)",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "animals:frog": {
+    "file": "/images/animals/frog.jpg",
+    "title": "Red-eyed_Leaf_Frog_(49661076226).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Red-eyed_Leaf_Frog_(49661076226).jpg",
+    "artist": "Charlie Jackson",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "fruits:apple": {
+    "file": "/images/fruits/apple.jpg",
+    "title": "Pink_lady_and_cross_section.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pink_lady_and_cross_section.jpg",
+    "artist": "fir0002 flagstaffotos [at] gmail.com Canon 20D + Sigma 150mm f/2.8",
+    "license": "GFDL 1.2",
+    "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html"
+  },
+  "fruits:banana": {
+    "file": "/images/fruits/banana.jpg",
+    "title": "Bananavarieties.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Bananavarieties.jpg",
+    "artist": "TimothyPilgrim",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "fruits:mango": {
+    "file": "/images/fruits/mango.jpg",
+    "title": "Mangos_-_single_and_halved.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Mangos_-_single_and_halved.jpg",
+    "artist": "Ivar Leidus",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "fruits:grapes": {
+    "file": "/images/fruits/grapes.jpg",
+    "title": "Grapes,_Rostov-on-Don,_Russia.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Grapes,_Rostov-on-Don,_Russia.jpg",
+    "artist": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "fruits:orange": {
+    "file": "/images/fruits/orange.jpg",
+    "title": "Oranges_-_whole-halved-segment.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Oranges_-_whole-halved-segment.jpg",
+    "artist": "Ivar Leidus",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "fruits:watermelon": {
+    "file": "/images/fruits/watermelon.jpg",
+    "title": "Taiwan_2009_Tainan_City_Organic_Farm_Watermelon_FRD_7962.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Taiwan_2009_Tainan_City_Organic_Farm_Watermelon_FRD_7962.jpg",
+    "artist": "Fred Hsu (Wikipedia:User:Fred Hsu on en.wikipedia)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "fruits:pineapple": {
+    "file": "/images/fruits/pineapple.jpg",
+    "title": "കൈതച്ചക്ക.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:%E0%B4%95%E0%B5%88%E0%B4%A4%E0%B4%9A%E0%B5%8D%E0%B4%9A%E0%B4%95%E0%B5%8D%E0%B4%95.jpg",
+    "artist": "Suniltg at Malayalam Wikipedia",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+  },
+  "fruits:strawberry": {
+    "file": "/images/fruits/strawberry.jpg",
+    "title": "Garden_strawberry_(Fragaria_×_ananassa)_single2.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Garden_strawberry_(Fragaria_%C3%97_ananassa)_single2.jpg",
+    "artist": "Ivar Leidus",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "fruits:cherry": {
+    "file": "/images/fruits/cherry.jpg",
+    "title": "Cherry_season_(48216568227).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Cherry_season_(48216568227).jpg",
+    "artist": "spurekar",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "fruits:pear": {
+    "file": "/images/fruits/pear.jpg",
+    "title": "Pears.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pears.jpg",
+    "artist": "Keith Weller",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "fruits:lemon": {
+    "file": "/images/fruits/lemon.jpg",
+    "title": "Lemon.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Lemon.jpg",
+    "artist": "André Karwath aka Aka",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5"
+  },
+  "fruits:coconut": {
+    "file": "/images/fruits/coconut.jpg",
+    "title": "Coconut tree 06271.JPG",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Coconut_tree_06271.JPG",
+    "artist": "Vengolis",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "vegetables:carrot": {
+    "file": "/images/vegetables/carrot.jpg",
+    "title": "Vegetable-Carrot-Bundle-wStalks.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Vegetable-Carrot-Bundle-wStalks.jpg",
+    "artist": "Evan-Amos",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "vegetables:potato": {
+    "file": "/images/vegetables/potato.jpg",
+    "title": "Patates.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Patates.jpg",
+    "artist": "Scott Bauer, USDA ARS",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "vegetables:tomato": {
+    "file": "/images/vegetables/tomato.jpg",
+    "title": "Tomato_je.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Tomato_je.jpg",
+    "artist": "Softeis",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "vegetables:onion": {
+    "file": "/images/vegetables/onion.jpg",
+    "title": "Mixed_onions.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Mixed_onions.jpg",
+    "artist": "Colin",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "vegetables:corn": {
+    "file": "/images/vegetables/corn.jpg",
+    "title": "Yellow Corn on the Cob (35115370841).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Yellow_Corn_on_the_Cob_(35115370841).jpg",
+    "artist": "Willis Lam",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "vegetables:cucumber": {
+    "file": "/images/vegetables/cucumber.jpg",
+    "title": "ARS_cucumber.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:ARS_cucumber.jpg",
+    "artist": "Stephen Ausmus, USDA ARS",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "vegetables:brinjal": {
+    "file": "/images/vegetables/brinjal.jpg",
+    "title": "Solanum_melongena_24_08_2012_(1).JPG",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Solanum_melongena_24_08_2012_(1).JPG",
+    "artist": "Joydeep",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "vegetables:garlic": {
+    "file": "/images/vegetables/garlic.jpg",
+    "title": "Garlic bulbs and cloves.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Garlic_bulbs_and_cloves.jpg",
+    "artist": "Ivar Leidus",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "vegetables:chilli": {
+    "file": "/images/vegetables/chilli.jpg",
+    "title": "Madame_Jeanette_and_other_chillies.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Madame_Jeanette_and_other_chillies.jpg",
+    "artist": "Takeaway",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "vegetables:mushroom": {
+    "file": "/images/vegetables/mushroom.jpg",
+    "title": "2016-01 Agaricus bisporus 07.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:2016-01_Agaricus_bisporus_07.jpg",
+    "artist": "0x010C",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "vegetables:broccoli": {
+    "file": "/images/vegetables/broccoli.jpg",
+    "title": "Broccoli_and_cross_section_edit.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Broccoli_and_cross_section_edit.jpg",
+    "artist": "Fir0002",
+    "license": "GFDL 1.2",
+    "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html"
+  },
+  "body:eye": {
+    "file": "/images/body/eye.jpg",
+    "title": "Human_eye_with_blood_vessels.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Human_eye_with_blood_vessels.jpg",
+    "artist": "ROTFLOLEB",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "body:ear": {
+    "file": "/images/body/ear.jpg",
+    "title": "Human_right_ear_(cropped).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Human_right_ear_(cropped).jpg",
+    "artist": "Genusfotografen (Tomas Gunnarsson) / Wikimedia Sverige",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "body:nose": {
+    "file": "/images/body/nose.jpg",
+    "title": "Fort_Ross_Elena_wearing_Traditional_Russian_Costume_(cropped).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fort_Ross_Elena_wearing_Traditional_Russian_Costume_(cropped).jpg",
+    "artist": "Franco Folini",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "body:hand": {
+    "file": "/images/body/hand.jpg",
+    "title": "Hand,_fingers_-_back.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Hand,_fingers_-_back.jpg",
+    "artist": "Genusfotografen (Tomas Gunnarsson) / Wikimedia",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "body:foot": {
+    "file": "/images/body/foot.jpg",
+    "title": "Foot_on_white_background.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Foot_on_white_background.jpg",
+    "artist": "Genusfotografen (Tomas Gunnarsson) / Wikimedia",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "body:leg": {
+    "file": "/images/body/leg.jpg",
+    "title": "North Greenwich - July 2012 - Walking women, one with umbrella.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:North_Greenwich_-_July_2012_-_Walking_women,_one_with_umbrella.jpg",
+    "artist": "Gareth Williams",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "body:teeth": {
+    "file": "/images/body/teeth.jpg",
+    "title": "06-10-06smile.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:06-10-06smile.jpg",
+    "artist": "dozenist",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "body:tongue": {
+    "file": "/images/body/tongue.jpg",
+    "title": "Child tongue.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Child_tongue.jpg",
+    "artist": "Unknown",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "body:hair": {
+    "file": "/images/body/hair.jpg",
+    "title": "Girl with long black hair (ponytail), rear view.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Girl_with_long_black_hair_(ponytail),_rear_view.jpg",
+    "artist": "Alex Neman",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "body:face": {
+    "file": "/images/body/face.jpg",
+    "title": "Mother-Child face to face.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Mother-Child_face_to_face.jpg",
+    "artist": "Robert Whitehead",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "body:brain": {
+    "file": "/images/body/brain.jpg",
+    "title": "The Human Brain Model 02.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Human_Brain_Model_02.jpg",
+    "artist": "Edeh Sophia",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "family:mother": {
+    "file": "/images/family/mother.jpg",
+    "title": "Mother and child. Gandola Monastery. Lahaul, India. 2004.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Mother_and_child._Gandola_Monastery._Lahaul,_India._2004.jpg",
+    "artist": "John Hill",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "family:father": {
+    "file": "/images/family/father.jpg",
+    "title": "Father's_love_(cropped).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Father%27s_love_(cropped).jpg",
+    "artist": "Hripsime Poghosyan",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "family:brother": {
+    "file": "/images/family/brother.jpg",
+    "title": "Two brothers together in Bihar, India.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Two_brothers_together_in_Bihar,_India.jpg",
+    "artist": "Saddam19",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "family:sister": {
+    "file": "/images/family/sister.jpg",
+    "title": "Two sisters ride on their bike and baby stroller respectively on a late afternoon.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Two_sisters_ride_on_their_bike_and_baby_stroller_respectively_on_a_late_afternoon.jpg",
+    "artist": "KENECHI ADINNU",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "family:grandfather": {
+    "file": "/images/family/grandfather.jpg",
+    "title": "Bratan Bali Indonesia Grandfather-and-grandson-after-Puja-01.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Bratan_Bali_Indonesia_Grandfather-and-grandson-after-Puja-01.jpg",
+    "artist": "CEphoto, Uwe Aranas",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "family:grandmother": {
+    "file": "/images/family/grandmother.jpg",
+    "title": "Grandmother and granddaughter＿taiwan.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Grandmother_and_granddaughter%EF%BC%BFtaiwan.jpg",
+    "artist": "邱鈺鋒",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "family:baby": {
+    "file": "/images/family/baby.jpg",
+    "title": "Baby.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Baby.jpg",
+    "artist": "Carin Araujo, http://www.prtc.net/~carin",
+    "license": "Copyrighted free use",
+    "licenseUrl": ""
+  },
+  "family:family": {
+    "file": "/images/family/family.jpg",
+    "title": "Obama family portrait in the Green Room.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Obama_family_portrait_in_the_Green_Room.jpg",
+    "artist": "Annie Leibovitz / Released by White House Photo Office",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "family:friend": {
+    "file": "/images/family/friend.jpg",
+    "title": "Iraqi girl smiles.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Iraqi_girl_smiles.jpg",
+    "artist": "Christiaan Briggs",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "verbs:run": {
+    "file": "/images/verbs/run.jpg",
+    "title": "Spin the black circle.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Spin_the_black_circle.jpg",
+    "artist": "Sfonda",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:walk": {
+    "file": "/images/verbs/walk.jpg",
+    "title": "Women_walking_in_Hyderabad_street.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Women_walking_in_Hyderabad_street.jpg",
+    "artist": "IgorZed",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "verbs:eat": {
+    "file": "/images/verbs/eat.jpg",
+    "title": "Boy eating carrots.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Boy_eating_carrots.jpg",
+    "artist": "Fulani215",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:drink": {
+    "file": "/images/verbs/drink.jpg",
+    "title": "Young girl drinks water while sitting at table during family meal in restaurant.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Young_girl_drinks_water_while_sitting_at_table_during_family_meal_in_restaurant.jpg",
+    "artist": "Shixart1985",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "verbs:sleep": {
+    "file": "/images/verbs/sleep.jpg",
+    "title": "014 Baby cape fur seal sleeping at Cape cross Photo by Giles Laurent.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:014_Baby_cape_fur_seal_sleeping_at_Cape_cross_Photo_by_Giles_Laurent.jpg",
+    "artist": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:jump": {
+    "file": "/images/verbs/jump.jpg",
+    "title": "Beautiful girl jumping on rail tracks.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Beautiful_girl_jumping_on_rail_tracks.jpg",
+    "artist": "Bundleofgreens",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:swim": {
+    "file": "/images/verbs/swim.jpg",
+    "title": "40._Schwimmzonen-_und_Mastersmeeting_Enns_2017_100m_Brust_Herren_USC_Traun-9897.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:40._Schwimmzonen-_und_Mastersmeeting_Enns_2017_100m_Brust_Herren_USC_Traun-9897.jpg",
+    "artist": "Isiwal",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:read": {
+    "file": "/images/verbs/read.jpg",
+    "title": "Close-up of child reading a book.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Close-up_of_child_reading_a_book.jpg",
+    "artist": "Widad.sirkhotte",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "verbs:write": {
+    "file": "/images/verbs/write.jpg",
+    "title": "Child studies and writes in notebook at a table with focus and concentration in a bright indoor setting.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Child_studies_and_writes_in_notebook_at_a_table_with_focus_and_concentration_in_a_bright_indoor_setting.jpg",
+    "artist": "Shixart1985",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "verbs:dance": {
+    "file": "/images/verbs/dance.jpg",
+    "title": "The Yoruba Cultural Group Children of Fasta International School - Dancing.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Yoruba_Cultural_Group_Children_of_Fasta_International_School_-_Dancing.jpg",
+    "artist": "Fastaschool",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:play": {
+    "file": "/images/verbs/play.jpg",
+    "title": "Children playing football 01.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Children_playing_football_01.jpg",
+    "artist": "Francis ackson soko",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:cry": {
+    "file": "/images/verbs/cry.jpg",
+    "title": "Crying-girl.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Crying-girl.jpg",
+    "artist": "Crimfants",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "verbs:laugh": {
+    "file": "/images/verbs/laugh.jpg",
+    "title": "Laughing_boy_at_golden_hour.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Laughing_boy_at_golden_hour.jpg",
+    "artist": "Basile Morin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:cook": {
+    "file": "/images/verbs/cook.jpg",
+    "title": "Cooking a paella.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Cooking_a_paella.jpg",
+    "artist": "Jebulon",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "verbs:wash": {
+    "file": "/images/verbs/wash.jpg",
+    "title": "OCD_handwash.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:OCD_handwash.jpg",
+    "artist": "Lars Klintwall Malmqvist (Larsklintwallmalmqvist)",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "verbs:bathe": {
+    "file": "/images/verbs/bathe.jpg",
+    "title": "Bubble bath fun.JPG",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Bubble_bath_fun.JPG",
+    "artist": "We El",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "verbs:brush": {
+    "file": "/images/verbs/brush.jpg",
+    "title": "Man_brushing_teeth.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Man_brushing_teeth.jpg",
+    "artist": "Bill Branson (Photographer)",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "verbs:sit": {
+    "file": "/images/verbs/sit.jpg",
+    "title": "Slut Boy Billy 3.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Slut_Boy_Billy_3.jpg",
+    "artist": "Billy Affou",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "verbs:stand": {
+    "file": "/images/verbs/stand.jpg",
+    "title": "Man playing Brazilian folk music of Recife.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Man_playing_Brazilian_folk_music_of_Recife.jpg",
+    "artist": "Wilfredor",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:look": {
+    "file": "/images/verbs/look.jpg",
+    "title": "Girl Looking Through Binoculars (51842300811).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Girl_Looking_Through_Binoculars_(51842300811).jpg",
+    "artist": "ShenandoahNPS",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "verbs:listen": {
+    "file": "/images/verbs/listen.jpg",
+    "title": "Shimer_College_Susan_Henking_listening_2013_cropped.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Shimer_College_Susan_Henking_listening_2013_cropped.jpg",
+    "artist": "Shimer College",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "verbs:talk": {
+    "file": "/images/verbs/talk.jpg",
+    "title": "BMW press conference, IAA 2017, Frankfurt (1Y7A1746).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:BMW_press_conference,_IAA_2017,_Frankfurt_(1Y7A1746).jpg",
+    "artist": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:open": {
+    "file": "/images/verbs/open.jpg",
+    "title": "Huijeongdang Hall interior through open doors at Changdeokgung Palace in Seoul.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Huijeongdang_Hall_interior_through_open_doors_at_Changdeokgung_Palace_in_Seoul.jpg",
+    "artist": "Basile Morin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:close": {
+    "file": "/images/verbs/close.jpg",
+    "title": "Solex_99_30_padlock_with_keys_(DSCF2659).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Solex_99_30_padlock_with_keys_(DSCF2659).jpg",
+    "artist": "Trougnouf",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "verbs:give": {
+    "file": "/images/verbs/give.jpg",
+    "title": "Giving a gift.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Giving_a_gift.jpg",
+    "artist": "asenat29",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "verbs:climb": {
+    "file": "/images/verbs/climb.jpg",
+    "title": "01ElCaballo_copy.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:01ElCaballo_copy.jpg",
+    "artist": "Paulliampritchard",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "verbs:fly": {
+    "file": "/images/verbs/fly.jpg",
+    "title": "Domestic_Pigeon_Flock.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Domestic_Pigeon_Flock.jpg",
+    "artist": "Toby Hudson",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "verbs:draw": {
+    "file": "/images/verbs/draw.jpg",
+    "title": "Child scribble age 1y10m.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Child_scribble_age_1y10m.jpg",
+    "artist": "Unknown",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "verbs:clap": {
+    "file": "/images/verbs/clap.jpg",
+    "title": "Arabic arts festival applause.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Arabic_arts_festival_applause.jpg",
+    "artist": "Indigo Goat from Liverpool",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "verbs:wave": {
+    "file": "/images/verbs/wave.jpg",
+    "title": "Waving_RCMP_(7612733982)_(cropped).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Waving_RCMP_(7612733982)_(cropped).jpg",
+    "artist": "Kurt Bauschardt from Edmonton, Canada",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "verbs:think": {
+    "file": "/images/verbs/think.jpg",
+    "title": "Contemplating boy in with his hand on his chin while thinking (15557042034).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Contemplating_boy_in_with_his_hand_on_his_chin_while_thinking_(15557042034).jpg",
+    "artist": "Personal Creations",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "verbs:love": {
+    "file": "/images/verbs/love.jpg",
+    "title": "Wedding_hugs.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wedding_hugs.jpg",
+    "artist": "Braden Kowitz",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "feelings:happy": {
+    "file": "/images/feelings/happy.jpg",
+    "title": "Girl_of_Vietnam.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Girl_of_Vietnam.jpg",
+    "artist": "Bùi Linh Ngân from Hanoi, Vietnam",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "feelings:sad": {
+    "file": "/images/feelings/sad.jpg",
+    "title": "Sad feeling of a child.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sad_feeling_of_a_child.jpg",
+    "artist": "Kssajan",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "feelings:angry": {
+    "file": "/images/feelings/angry.jpg",
+    "title": "Child's Angry Face.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Child%27s_Angry_Face.jpg",
+    "artist": "Babyaimeesmom",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "feelings:scared": {
+    "file": "/images/feelings/scared.jpg",
+    "title": "Scared Child at Nighttime.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Scared_Child_at_Nighttime.jpg",
+    "artist": "D Sharon Pruitt",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "feelings:surprised": {
+    "file": "/images/feelings/surprised.jpg",
+    "title": "Pretty Girl Shock and Awe.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pretty_Girl_Shock_and_Awe.jpg",
+    "artist": "D. Sharon Pruitt from Hill Air Force Base, Utah, USA",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "feelings:sick": {
+    "file": "/images/feelings/sick.jpg",
+    "title": "2023 Elektroniczny termometr lekarski.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:2023_Elektroniczny_termometr_lekarski.jpg",
+    "artist": "Jacek Halicki",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "feelings:hot": {
+    "file": "/images/feelings/hot.jpg",
+    "title": "Amanda_Françozo_At_The_Runner_Sports_Fragment.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Amanda_Fran%C3%A7ozo_At_The_Runner_Sports_Fragment.jpg",
+    "artist": "Bibikoff",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+  },
+  "feelings:cold": {
+    "file": "/images/feelings/cold.jpg",
+    "title": "Child holds a snowball while wearing a pink winter jacket during a snow-covered day in a park.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Child_holds_a_snowball_while_wearing_a_pink_winter_jacket_during_a_snow-covered_day_in_a_park.jpg",
+    "artist": "Shixart1985",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "feelings:tired": {
+    "file": "/images/feelings/tired.jpg",
+    "title": "Yawning_koala_bear_(3589381656)_(cropped).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Yawning_koala_bear_(3589381656)_(cropped).jpg",
+    "artist": "National Media Museum",
+    "license": "No restrictions",
+    "licenseUrl": "https://www.flickr.com/commons/usage/"
+  },
+  "food:bread": {
+    "file": "/images/food/bread.jpg",
+    "title": "Korb_mit_Brötchen.JPG",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Korb_mit_Br%C3%B6tchen.JPG",
+    "artist": "3268zauber",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "food:rice": {
+    "file": "/images/food/rice.jpg",
+    "title": "A bowl of rice.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_bowl_of_rice.jpg",
+    "artist": "Douglas Perkins",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "food:milk": {
+    "file": "/images/food/milk.jpg",
+    "title": "Glass_of_Milk_(33657535532).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Glass_of_Milk_(33657535532).jpg",
+    "artist": "NIAID",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "food:egg": {
+    "file": "/images/food/egg.jpg",
+    "title": "Huevo_frito.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Huevo_frito.jpg",
+    "artist": "Horacio Cambeiro",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "food:water": {
+    "file": "/images/food/water.jpg",
+    "title": "Fasting 4-Fasting-a-glass-of-water-on-an-empty-plate.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fasting_4-Fasting-a-glass-of-water-on-an-empty-plate.jpg",
+    "artist": "Dr Jean Fortunet",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "food:cake": {
+    "file": "/images/food/cake.jpg",
+    "title": "Pound_layer_cake.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pound_layer_cake.jpg",
+    "artist": "Scheinwerfermann",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "food:tea": {
+    "file": "/images/food/tea.jpg",
+    "title": "Longjing_tea_steeping_in_gaiwan.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Longjing_tea_steeping_in_gaiwan.jpg",
+    "artist": "Difference engine",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "food:honey": {
+    "file": "/images/food/honey.jpg",
+    "title": "Runny_hunny.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Runny_hunny.jpg",
+    "artist": "Scott Bauer, USDA ARS",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "food:sweets": {
+    "file": "/images/food/sweets.jpg",
+    "title": "Sweets Mithai in Shops for Diwali and other Festivals of India.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sweets_Mithai_in_Shops_for_Diwali_and_other_Festivals_of_India.jpg",
+    "artist": "Aashish Jethra",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "food:biscuit": {
+    "file": "/images/food/biscuit.jpeg",
+    "title": "Bourbon_and_Custard_Cream.jpeg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Bourbon_and_Custard_Cream.jpeg",
+    "artist": "GOLDIEM J",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "food:pizza": {
+    "file": "/images/food/pizza.jpg",
+    "title": "Pizza-3007395.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pizza-3007395.jpg",
+    "artist": "igorovsyannykov",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "food:juice": {
+    "file": "/images/food/juice.jpg",
+    "title": "Orange_juice_1.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Orange_juice_1.jpg",
+    "artist": "Agricultural Research Service",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "food:ice cream": {
+    "file": "/images/food/ice-cream.jpg",
+    "title": "Vanilla_Ice_Cream_Cone_at_Camp_Manitoulin.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Vanilla_Ice_Cream_Cone_at_Camp_Manitoulin.jpg",
+    "artist": "Steven Depolo",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "home:house": {
+    "file": "/images/home/house.jpg",
+    "title": "Ljungris July 2013.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ljungris_July_2013.jpg",
+    "artist": "Arild Vågen",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "home:door": {
+    "file": "/images/home/door.jpg",
+    "title": "Myeongjeongjeon seen through the wooden Gate Hyehwamun at Changgyeonggung Palace in Seoul.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Myeongjeongjeon_seen_through_the_wooden_Gate_Hyehwamun_at_Changgyeonggung_Palace_in_Seoul.jpg",
+    "artist": "Basile Morin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "home:window": {
+    "file": "/images/home/window.jpg",
+    "title": "Wooden house (window shutters), Riga.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wooden_house_(window_shutters),_Riga.jpg",
+    "artist": "Photograph: Radomianin",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "home:bed": {
+    "file": "/images/home/bed.jpg",
+    "title": "Canopy bed of Amantaka Suite in Amantaka luxury Resort & Hotel in Luang Prabang Laos.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Canopy_bed_of_Amantaka_Suite_in_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg",
+    "artist": "Basile Morin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "home:chair": {
+    "file": "/images/home/chair.jpg",
+    "title": "Santorin (GR), Fira -- 2017 -- 2598.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Santorin_(GR),_Fira_--_2017_--_2598.jpg",
+    "artist": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "home:clock": {
+    "file": "/images/home/clock.jpg",
+    "title": "Pendulum clock by Jacob Kock, antique furniture photography, IMG 0931 edit.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pendulum_clock_by_Jacob_Kock,_antique_furniture_photography,_IMG_0931_edit.jpg",
+    "artist": "Christoph Braun",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "home:key": {
+    "file": "/images/home/key.jpg",
+    "title": "Solex 99 30 padlock with keys (DSCF2659).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Solex_99_30_padlock_with_keys_(DSCF2659).jpg",
+    "artist": "Trougnouf",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "home:cup": {
+    "file": "/images/home/cup.jpg",
+    "title": "Cup of black tea.JPG",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Cup_of_black_tea.JPG",
+    "artist": "AntanO",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "home:spoon": {
+    "file": "/images/home/spoon.jpg",
+    "title": "Soup_Spoon.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Soup_Spoon.jpg",
+    "artist": "Donovan Govan.",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "home:bucket": {
+    "file": "/images/home/bucket.jpg",
+    "title": "Sand bucket.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sand_bucket.jpg",
+    "artist": "David",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "home:umbrella": {
+    "file": "/images/home/umbrella.jpg",
+    "title": "Beige and brown oil-paper umbrella on the edge of a wooden house in Luang Prabang Laos.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Beige_and_brown_oil-paper_umbrella_on_the_edge_of_a_wooden_house_in_Luang_Prabang_Laos.jpg",
+    "artist": "Basile Morin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "home:phone": {
+    "file": "/images/home/phone.jpg",
+    "title": "Smartphone display screen.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Smartphone_display_screen.jpg",
+    "artist": "Skitterphoto",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "home:soap": {
+    "file": "/images/home/soap.jpg",
+    "title": "Handmade_soap_cropped_and_simplified.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Handmade_soap_cropped_and_simplified.jpg",
+    "artist": "Malene Thyssen, simplified by HLHJ",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+  },
+  "home:bulb": {
+    "file": "/images/home/bulb.jpg",
+    "title": "Glühwendel brennt durch.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gl%C3%BChwendel_brennt_durch.jpg",
+    "artist": "Stefan Krause, Germany",
+    "license": "FAL",
+    "licenseUrl": "http://artlibre.org/licence/lal/en"
+  },
+  "school:book": {
+    "file": "/images/school/book.jpg",
+    "title": "A warm and inviting setup features an open book surrounded by scattered pages, a vintage camera, a cup of coffee, and a single rose.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_warm_and_inviting_setup_features_an_open_book_surrounded_by_scattered_pages,_a_vintage_camera,_a_cup_of_coffee,_and_a_single_rose.jpg",
+    "artist": "Shixart1985",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "school:pencil": {
+    "file": "/images/school/pencil.jpg",
+    "title": "Pencils_hb.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pencils_hb.jpg",
+    "artist": "Original uploader was Dmgerman at en.wikipedia",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+  },
+  "school:pen": {
+    "file": "/images/school/pen.jpg",
+    "title": "Carandache_Ecridor.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Carandache_Ecridor.jpg",
+    "artist": "Vadim Zhuravlev",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "school:bag": {
+    "file": "/images/school/bag.jpg",
+    "title": "Rucksack1.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Rucksack1.jpg",
+    "artist": "de:Benutzer:sjr",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "school:teacher": {
+    "file": "/images/school/teacher.jpg",
+    "title": "A_public_high_school_teacher_in_a_classroom_in_the_United_States_08.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_public_high_school_teacher_in_a_classroom_in_the_United_States_08.jpg",
+    "artist": "Harrison Keely",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "school:school": {
+    "file": "/images/school/school.jpg",
+    "title": "AMSOM Building Ahmedabad University Gujarat Jul22 A7C 02063.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:AMSOM_Building_Ahmedabad_University_Gujarat_Jul22_A7C_02063.jpg",
+    "artist": "This Photo was taken by Timothy A. Gonsalves. Feel free to use my photos, but please mention me as the author. I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk page, for my information. Please contact me before commercial use. Please do not upload an edited image here without consulting me. I would like to make corrections only at my own source to ensure that the changes improve the image and are preserved.Otherwise you may upload an edited image with a new name. Please use one of the templates derivative or extract.",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "school:ruler": {
+    "file": "/images/school/ruler.jpg",
+    "title": "Ruler on table.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ruler_on_table.jpg",
+    "artist": "Douglas Perkins",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "school:scissors": {
+    "file": "/images/school/scissors.jpg",
+    "title": "Standard_household_scissors.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Standard_household_scissors.jpg",
+    "artist": "Doggerelblogger",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "school:computer": {
+    "file": "/images/school/computer.jpg",
+    "title": "IBM Thinkpad R51.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:IBM_Thinkpad_R51.jpg",
+    "artist": "André Karwath aka Aka",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "school:ball": {
+    "file": "/images/school/ball.jpg",
+    "title": "Many_balls.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Many_balls.jpg",
+    "artist": "Conrad 7",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "school:bell": {
+    "file": "/images/school/bell.jpg",
+    "title": "Columbus Simpson, Portable Brass Hand Bell, c. 1936, NGA 20880.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Columbus_Simpson,_Portable_Brass_Hand_Bell,_c._1936,_NGA_20880.jpg",
+    "artist": "Columbus Simpson",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "clothes:shirt": {
+    "file": "/images/clothes/shirt.jpg",
+    "title": "Charvet_shirt.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Charvet_shirt.jpg",
+    "artist": "Author of the photograph unknown.",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "clothes:pants": {
+    "file": "/images/clothes/pants.jpg",
+    "title": "Trousers-colourisolated.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Trousers-colourisolated.jpg",
+    "artist": "Dressed_for_summer.jpg: Ed Yourdon derivative work: Themightyquill (talk)",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "clothes:dress": {
+    "file": "/images/clothes/dress.jpg",
+    "title": "Dress with circle skirt in the wind - pose 2.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Dress_with_circle_skirt_in_the_wind_-_pose_2.jpg",
+    "artist": "Tobias ToMar Maier",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "clothes:cap": {
+    "file": "/images/clothes/cap.jpg",
+    "title": "Basecap_New_York_Yankees.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Basecap_New_York_Yankees.jpg",
+    "artist": "Ulrich Waack",
+    "license": "CC BY-SA 2.0 de",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/de/deed.en"
+  },
+  "clothes:shoes": {
+    "file": "/images/clothes/shoes.jpg",
+    "title": "Professional Sneakers - Sneakers for hostesses, pilots and other professionals. Comfortable sneakers produced in leather inside and outside.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Professional_Sneakers_-_Sneakers_for_hostesses,_pilots_and_other_professionals._Comfortable_sneakers_produced_in_leather_inside_and_outside.jpg",
+    "artist": "Ricardovfo",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "clothes:socks": {
+    "file": "/images/clothes/socks.jpg",
+    "title": "Villased sokid, STM 1998.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Villased_sokid,_STM_1998.jpg",
+    "artist": "Venemaa; Petseri rajoon, Põrste küla; valmistaja: Helü, Linda; fotograaf: Tuul, Toomas",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "clothes:glasses": {
+    "file": "/images/clothes/glasses.jpg",
+    "title": "2023_Okulary_korekcyjne.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:2023_Okulary_korekcyjne.jpg",
+    "artist": "Jacek Halicki",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "clothes:gloves": {
+    "file": "/images/clothes/gloves.jpg",
+    "title": "62-147-BI Gloves, Flight Nurse, Navy Nurse Corp (4711063109).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:62-147-BI_Gloves,_Flight_Nurse,_Navy_Nurse_Corp_(4711063109).jpg",
+    "artist": "Naval History &amp; Heritage Command from Washington, DC, USA",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "clothes:scarf": {
+    "file": "/images/clothes/scarf.jpg",
+    "title": "Knit cap and loop scarf set.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Knit_cap_and_loop_scarf_set.jpg",
+    "artist": "Tobias ToMar Maier",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "clothes:coat": {
+    "file": "/images/clothes/coat.jpg",
+    "title": "Polo Ralph Lauren winter coat jacket.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Polo_Ralph_Lauren_winter_coat_jacket.jpg",
+    "artist": "Menswear Market",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "nature:sun": {
+    "file": "/images/nature/sun.jpg",
+    "title": "The_Sun_in_white_light.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Sun_in_white_light.jpg",
+    "artist": "Matúš Motlo",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "nature:moon": {
+    "file": "/images/nature/moon.jpg",
+    "title": "FullMoon2010.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:FullMoon2010.jpg",
+    "artist": "Gregory H. Revera",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "nature:star": {
+    "file": "/images/nature/star.jpg",
+    "title": "Starry night at Old Uppsala, Sweden.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Starry_night_at_Old_Uppsala,_Sweden.jpg",
+    "artist": "Kevin Cho",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "nature:cloud": {
+    "file": "/images/nature/cloud.jpg",
+    "title": "Colorful clouds and blue sky with water reflection of an island hosting trees at sunrise in Si Phan Don, Laos.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Colorful_clouds_and_blue_sky_with_water_reflection_of_an_island_hosting_trees_at_sunrise_in_Si_Phan_Don,_Laos.jpg",
+    "artist": "Basile Morin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "nature:rain": {
+    "file": "/images/nature/rain.jpg",
+    "title": "Hard_rain_on_a_roof.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Hard_rain_on_a_roof.jpg",
+    "artist": "W.carter",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "nature:tree": {
+    "file": "/images/nature/tree.jpg",
+    "title": "Usamljeni_jasen_-_panoramio_(cropped).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Usamljeni_jasen_-_panoramio_(cropped).jpg",
+    "artist": "menergo",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "nature:flower": {
+    "file": "/images/nature/flower.jpg",
+    "title": "Magnolia_grandiflora_-_flower_1.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Magnolia_grandiflora_-_flower_1.jpg",
+    "artist": "Ianaré Sévi",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "nature:leaf": {
+    "file": "/images/nature/leaf.jpg",
+    "title": "Lisc_lipy.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Lisc_lipy.jpg",
+    "artist": "Krzysztof P. Jasiutowicz",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "nature:mountain": {
+    "file": "/images/nature/mountain.jpg",
+    "title": "Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg",
+    "artist": "Luca Galuzzi (Lucag)",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5"
+  },
+  "nature:fire": {
+    "file": "/images/nature/fire.jpg",
+    "title": "Large_bonfire.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Large_bonfire.jpg",
+    "artist": "Fir0002",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "nature:rainbow": {
+    "file": "/images/nature/rainbow.jpg",
+    "title": "Double-alaskan-rainbow.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Double-alaskan-rainbow.jpg",
+    "artist": "Eric Rolph at English Wikipedia",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5"
+  },
+  "nature:sea": {
+    "file": "/images/nature/sea.jpg",
+    "title": "Baltic Sea view from Schmiedeberg hill in Rerik, 2025-06-23.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Baltic_Sea_view_from_Schmiedeberg_hill_in_Rerik,_2025-06-23.jpg",
+    "artist": "Radomianin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "transport:car": {
+    "file": "/images/transport/car.jpg",
+    "title": "Maruti Suzuki Swift 4456.JPG",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Maruti_Suzuki_Swift_4456.JPG",
+    "artist": "Premnath Kudva",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "transport:bus": {
+    "file": "/images/transport/bus.jpg",
+    "title": "LTZ1328-19-20241030-160332.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:LTZ1328-19-20241030-160332.jpg",
+    "artist": "SIA321",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "transport:train": {
+    "file": "/images/transport/train.jpg",
+    "title": "Indian Railways Train in 2025.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Indian_Railways_Train_in_2025.jpg",
+    "artist": "Ash7876",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "transport:bicycle": {
+    "file": "/images/transport/bicycle.jpg",
+    "title": "Left_side_of_Flying_Pigeon.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Left_side_of_Flying_Pigeon.jpg",
+    "artist": "齐健 from Peking, People's Republic of China",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "transport:aeroplane": {
+    "file": "/images/transport/aeroplane.jpg",
+    "title": "United_A320_N405UA_at_BOS_(33787222465).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:United_A320_N405UA_at_BOS_(33787222465).jpg",
+    "artist": "G B_NZ",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "transport:boat": {
+    "file": "/images/transport/boat.jpg",
+    "title": "Motorboat_at_Kankaria_lake.JPG",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Motorboat_at_Kankaria_lake.JPG",
+    "artist": "Kondicherry",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "transport:ship": {
+    "file": "/images/transport/ship.jpg",
+    "title": "White Sea–Baltic Canal. Cruise ship A. S. Popov P7120615 2200.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:White_Sea%E2%80%93Baltic_Canal._Cruise_ship_A._S._Popov_P7120615_2200.jpg",
+    "artist": "Alexxx1979",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "transport:truck": {
+    "file": "/images/transport/truck.jpg",
+    "title": "2001_Ford_F-250_Super_Duty_XL_regular_cab_flatbed,_front_left,_05-17-2025.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:2001_Ford_F-250_Super_Duty_XL_regular_cab_flatbed,_front_left,_05-17-2025.jpg",
+    "artist": "MercurySable99",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "transport:rocket": {
+    "file": "/images/transport/rocket.jpg",
+    "title": "Soyuz_TMA-9_launch.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Soyuz_TMA-9_launch.jpg",
+    "artist": "Bill Ingalls",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "transport:tractor": {
+    "file": "/images/transport/tractor.jpg",
+    "title": "Ford_8N.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ford_8N.jpg",
+    "artist": "Mulad",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "transport:helicopter": {
+    "file": "/images/transport/helicopter.jpg",
+    "title": "VH-SUF_Taking_Off.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:VH-SUF_Taking_Off.jpg",
+    "artist": "Fly45yt",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "verbs:sing": {
+    "file": "/images/verbs/sing.jpg",
+    "title": "2018-11-02 Konzert -The Hellfreaks- in -Ilvers Musikbar- in Erfurt IMG 3414 LR10 by Stepro.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:2018-11-02_Konzert_-The_Hellfreaks-_in_-Ilvers_Musikbar-_in_Erfurt_IMG_3414_LR10_by_Stepro.jpg",
+    "artist": "Steffen Prößdorf",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "body:mouth": {
+    "file": "/images/body/mouth.jpg",
+    "title": "Smiling Woman With Upper Lip Frenulum Piercing.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Smiling_Woman_With_Upper_Lip_Frenulum_Piercing.jpg",
+    "artist": "Zürich_Street_Parade_2011_010.jpg: niky81 derivative work: Bomazi",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  }
+}
