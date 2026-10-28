@@ -13,6 +13,19 @@ const applyTheme = (theme) => {
 }
 applyTheme(store.getState().ui.theme)
 
+// Keep the kids' profiles on this device (shown at once on the next visit)
+let lastProfiles = store.getState().profiles.list
+store.subscribe(() => {
+  const { list } = store.getState().profiles
+  if (list === lastProfiles) return
+  lastProfiles = list
+  try {
+    localStorage.setItem('ek-profiles', JSON.stringify(list))
+  } catch {
+    // storage full or blocked – ignore
+  }
+})
+
 // Remember the selected kid on this device, so links like /category/animals work after a reload
 let lastKid = store.getState().profiles.currentId
 store.subscribe(() => {

@@ -1,8 +1,8 @@
 // Service worker: makes the app installable and usable offline.
 // - App files (JS, CSS, icons, fonts): served from cache, refreshed in the background
-// - /api GET requests: network first, last good answer from cache when offline
+// - /api GET requests and /data/content.json: network first, last good answer from cache when offline
 // - Page navigations: network first, cached index.html when offline
-const VERSION = 'v1'
+const VERSION = 'v2'
 const APP_CACHE = `english-masti-app-${VERSION}`
 const API_CACHE = `english-masti-api-${VERSION}`
 const PRECACHE = ['/', '/index.html', '/manifest.webmanifest', '/icon.svg', '/icon-192.png', '/icon-512.png']
@@ -54,7 +54,7 @@ self.addEventListener('fetch', (event) => {
   const sameOrigin = url.origin === self.location.origin
   const isFont = url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com'
 
-  if (sameOrigin && url.pathname.startsWith('/api/')) {
+  if (sameOrigin && (url.pathname.startsWith('/api/') || url.pathname === '/data/content.json')) {
     event.respondWith(networkFirst(request, API_CACHE))
   } else if (request.mode === 'navigate') {
     event.respondWith(networkFirst(request, APP_CACHE, '/index.html'))

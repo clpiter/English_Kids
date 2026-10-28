@@ -46,6 +46,17 @@ export const finishLesson = createAsyncThunk(
   async ({ id, lesson }) => (await api.post(`/profiles/${id}/lessons`, { id: lesson })).data,
 )
 
+// Kids' profiles are kept on the device too: the app shows them at once and keeps working
+// while the server is waking up or offline; the server's copy replaces them when it answers.
+function savedProfiles() {
+  try {
+    const list = JSON.parse(localStorage.getItem('ek-profiles'))
+    return Array.isArray(list) ? list : null
+  } catch {
+    return null
+  }
+}
+
 function savedCurrentId() {
   try {
     return localStorage.getItem('ek-kid')
@@ -63,7 +74,10 @@ function upsert(state, action) {
 
 const profileSlice = createSlice({
   name: 'profiles',
-  initialState: { list: [], currentId: savedCurrentId(), status: 'idle', error: null },
+  initialState: (() => {
+    const saved = savedProfiles()
+    return { list: saved || [], currentId: savedCurrentId(), status: saved ? 'ready' : 'idle', error: null, offline: false }
+  })(),
   reducers: {
     selectProfile(state, action) {
       state.currentId = action.payload
@@ -72,16 +86,22 @@ const profileSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchProfiles.pending, (state) => {
-        state.status = 'loading'
+        if (state.status !== 'ready') state.status = 'loading'
         state.error = null
       })
       .addCase(fetchProfiles.fulfilled, (state, action) => {
         state.status = 'ready'
+        state.offline = false
         state.list = action.payload
         // the remembered kid may have been deleted on another device
         if (!state.list.some((p) => p._id === state.currentId)) state.currentId = null
       })
       .addCase(fetchProfiles.rejected, (state, action) => {
+        // saved profiles on this device: keep going with them
+        if (state.status === 'ready') {
+          state.offline = true
+          return
+        }
         state.status = 'error'
         state.error = action.error.message
       })
