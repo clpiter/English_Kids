@@ -54,7 +54,7 @@ export default function Home({ profile }) {
           const done = catWords.filter((w) => learned.has(w.key)).length
           return (
             <button key={c.id} className="category-card" style={{ '--c': c.color }} onClick={() => open(c.id)}>
-              <CategoryCover category={c.id} icon={c.icon} />
+              <CategoryCover category={c.id} icon={c.icon} cartoon />
               <span className="category-name">{bi(c.hi, c.en)}</span>
               <ProgressBar value={done} max={catWords.length} color={c.color} />
               <span className="category-count">

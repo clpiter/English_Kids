@@ -770,6 +770,25 @@ h3 {
   font-size: 3rem;
 }
 
+/* home page tiles: a cartoon on a soft background in the category's colour */
+.cover-cartoon {
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--c) 35%, var(--card)) 0%, color-mix(in srgb, var(--c) 12%, var(--card)) 70%);
+}
+
+.cover-cartoon img {
+  width: 72%;
+  height: 72%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.18));
+  transition: transform 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.4);
+}
+
+.category-card:hover .cover-cartoon img {
+  transform: scale(1.12) rotate(-4deg);
+}
+
 .category-name {
   font-weight: 800;
   font-size: 1.1rem;
@@ -2367,6 +2386,38 @@ h3 {
 .story-text,
 .story-hi {
   white-space: pre-line;
+}
+
+/* Hindi mode: the Hindi line right under each English line */
+.hi-line {
+  display: block;
+  white-space: normal;
+  font-size: 0.7em;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--hi);
+  background: var(--hi-soft);
+  border-radius: 12px;
+  padding: 4px 12px;
+  margin: 2px 0 10px;
+  animation: fadeIn 0.35s ease both;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.hi-line.para-end {
+  margin-bottom: 22px;
+}
+
+/* the Hindi line being read aloud */
+.hi-line.hi-speaking {
+  background: var(--primary);
+  color: #fff;
+  transform: scale(1.02);
+}
+
+.btn-sound.hi.active {
+  outline: 3px solid var(--hi);
+  outline-offset: 2px;
 }
 
 .story-credit {

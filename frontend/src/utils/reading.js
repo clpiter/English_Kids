@@ -101,3 +101,48 @@ export function resolveDifficult(key, words, glossary) {
   const word = words.find((w) => w.key === key)
   return word ? { key, en: word.en, hi: word.hi, say: word.say, word } : null
 }
+
+// A text split at `sep`, with where each part starts
+function withOffsets(text, sep) {
+  const out = []
+  let start = 0
+  for (const part of text.split(sep)) {
+    out.push({ start, text: part })
+    start += part.length + sep.length
+  }
+  return out
+}
+
+const EN_SENTENCE = /[^.!?]*[.!?]+["'”’)]*\s*|[^.!?]+$/g
+const HI_SENTENCE = /[^।?!]*[।?!]+["'”’)]*\s*|[^।?!]+$/g
+
+// Pieces of one paragraph: line by line (poems, letters), else sentence by sentence,
+// else the whole paragraph when the English and Hindi don't split into the same number of parts
+function matchPieces(en, hi) {
+  const enLines = withOffsets(en, '\n')
+  const hiLines = hi.split('\n')
+  if (enLines.length > 1 && enLines.length === hiLines.length) {
+    return enLines.map((l, i) => ({ end: l.start + l.text.trimEnd().length, hi: hiLines[i].trim() }))
+  }
+  const enSent = [...en.matchAll(EN_SENTENCE)].filter((m) => m[0].trim())
+  const hiSent = (hi.match(HI_SENTENCE) || []).filter((s) => s.trim())
+  if (enSent.length > 1 && enSent.length === hiSent.length) {
+    return enSent.map((m, i) => ({ end: m.index + m[0].trimEnd().length, hi: hiSent[i].trim() }))
+  }
+  return [{ end: en.trimEnd().length, hi: hi.trim() }]
+}
+
+// English text + its Hindi translation -> pieces to show the Hindi under each English line:
+// [{ end, hi, paraEnd }], `end` = where that piece ends in the English text
+export function pairLines(en, hi) {
+  if (!en || !hi) return []
+  const enParas = withOffsets(en, '\n\n')
+  const hiParas = hi.split('\n\n')
+  if (enParas.length !== hiParas.length) return [{ end: en.trimEnd().length, hi: hi.trim(), paraEnd: true }]
+  const out = []
+  enParas.forEach((p, i) => {
+    const pieces = matchPieces(p.text, hiParas[i])
+    pieces.forEach((pc, j) => out.push({ end: p.start + pc.end, hi: pc.hi, paraEnd: j === pieces.length - 1 }))
+  })
+  return out
+}

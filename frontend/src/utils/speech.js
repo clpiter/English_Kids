@@ -137,6 +137,79 @@ export function speakTracked(text, { onWord, onEnd, lang = 'en-IN', rate = 0.85 
   }
 }
 
+// Does this device have a voice for the language? (true while the voice list is still loading)
+export function hasVoice(lang) {
+  const voices = synth?.getVoices() || []
+  return !voices.length || voices.some((v) => v.lang.replace('_', '-').toLowerCase().startsWith(lang.slice(0, 2).toLowerCase()))
+}
+
+// A Hindi lesson line made ready for a voice: words in brackets are kept (only the brackets go),
+// "..." and quote marks become short pauses
+const forHindiSpeech = (text) =>
+  forSpeech(text.replace(/[()"“”‘’]/g, ' ').replace(/\.{2,}|…/g, ', ')).replace(/^[\s,]+/, '')
+
+// Speak lines one after another (a lesson's Hindi lines); onLine(i) when line i starts.
+// Spoken one sentence at a time, the next one only after the previous has finished: more reliable than
+// queueing everything (some voices skip or stop), and the highlighted line stays in step. Returns stop().
+export function speakLines(lines, { lang = 'hi-IN', rate = 0.9, onLine, onEnd } = {}) {
+  const parts = []
+  lines.forEach((line, i) => {
+    const sentences = (forHindiSpeech(line).match(/[^।?!\n]+[।?!]*/g) || []).map((s) => s.trim()).filter(Boolean)
+    for (const s of sentences) {
+      const last = parts[parts.length - 1]
+      // very short pieces ("अरे!", "वाह!") are joined to the line's previous sentence
+      if (last && last.i === i && (s.length < 12 || last.text.length < 12)) last.text += ' ' + s
+      else parts.push({ i, text: s })
+    }
+  })
+  if (!synth || !parts.length) {
+    onEnd?.()
+    return () => {}
+  }
+  synth.cancel()
+  let stopped = false
+  let n = 0
+  let timer
+  const voice = voiceFor(lang)
+
+  const next = () => {
+    clearTimeout(timer)
+    if (stopped) return
+    if (n >= parts.length) {
+      stopped = true
+      onEnd?.()
+      return
+    }
+    const p = parts[n++]
+    let done = false
+    const finish = () => {
+      if (done) return
+      done = true
+      next()
+    }
+    const u = new SpeechSynthesisUtterance(p.text)
+    u.lang = lang
+    u.rate = rate
+    u.pitch = 1.1
+    if (voice) u.voice = voice
+    u.onend = finish
+    u.onerror = finish
+    onLine?.(p.i)
+    synth.speak(u)
+    // some voices never say they have finished: move on after a generous time
+    timer = setTimeout(finish, 5000 + p.text.length * 250)
+  }
+  next()
+
+  return () => {
+    if (stopped) return
+    stopped = true
+    clearTimeout(timer)
+    synth.cancel()
+    onEnd?.()
+  }
+}
+
 // Strip the "(...)" helper notes before speaking Hindi, e.g. "एक (1)" -> "एक"
 export const speakHi = (text) => speak([{ text: cleanHi(text), lang: 'hi-IN' }])
 

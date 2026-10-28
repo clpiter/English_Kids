@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { speakTracked } from './speech'
+import { speakLines, speakTracked } from './speech'
 
 // "Read aloud" (पढ़कर सुनाओ): speaks the lesson and tells which word token is being spoken,
 // so it can be highlighted (and goes back to normal when the voice moves on).
@@ -53,4 +53,32 @@ export function useReadAloud(tokens) {
   useEffect(() => () => stopRef.current?.(), [])
 
   return { speaking, current, start, stop, toggle: speaking ? stop : start }
+}
+
+// "Read aloud" in Hindi mode: speaks the Hindi lines and tells which line is being spoken
+export function useReadAloudLines(lines) {
+  const [speaking, setSpeaking] = useState(false)
+  const [current, setCurrent] = useState(-1) // line index being spoken
+  const stopRef = useRef(null)
+
+  const stop = useCallback(() => {
+    stopRef.current?.()
+    stopRef.current = null
+  }, [])
+
+  const start = useCallback(() => {
+    stop()
+    setSpeaking(true)
+    stopRef.current = speakLines(lines, {
+      onLine: setCurrent,
+      onEnd: () => {
+        setSpeaking(false)
+        setCurrent(-1)
+      },
+    })
+  }, [stop, lines])
+
+  useEffect(() => () => stopRef.current?.(), [])
+
+  return { speaking, current, start, stop }
 }

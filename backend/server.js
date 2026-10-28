@@ -81,7 +81,14 @@ async function start() {
   await mongoose.connect(MONGO_URI);
   console.log('MongoDB connected');
   await seedWords();
-  app.listen(PORT, () => console.log(`API running on http://localhost:${PORT}`));
+  app
+    .listen(PORT, () => console.log(`API running on http://localhost:${PORT}`))
+    .on('error', (err) => {
+      // usually another copy of this server is still running
+      if (err.code === 'EADDRINUSE') console.error(`Port ${PORT} is already in use: stop the other server (or set PORT in .env) and try again.`);
+      else console.error(err);
+      process.exit(1);
+    });
   // phones on the same Wi-Fi need https for the microphone; hosts like Render already give https
   if (!process.env.RENDER && process.env.DISABLE_LOCAL_HTTPS !== 'true') {
     startHttps(app, HTTPS_PORT).catch((err) => console.warn('HTTPS not started:', err.message));

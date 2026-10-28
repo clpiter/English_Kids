@@ -7,17 +7,59 @@ import BackButton from '../components/BackButton'
 import WordSheet from '../components/WordSheet'
 import WordImage from '../components/WordImage'
 import { categoryInfo } from '../utils/categories'
-import { buildLexicon, difficultKey, tokenize } from '../utils/reading'
+import { buildLexicon, difficultKey, pairLines, tokenize } from '../utils/reading'
 import { BOOK_GAMES, bookPool } from '../utils/book'
 import { activityById } from '../activities/list'
 import { playWin } from '../utils/sounds'
 import { useReadAlong } from '../utils/useReadAlong'
-import { useReadAloud } from '../utils/useReadAloud'
+import { useReadAloud, useReadAloudLines } from '../utils/useReadAloud'
 import Confetti from '../components/Confetti'
-import { speak, speakEn, speakHi } from '../utils/speech'
+import { hasVoice, speak, speakEn } from '../utils/speech'
 import { VOICE, useAnnounce } from '../utils/voice'
 
 const BOOK_INFO = { icon: '📕', color: '#6d4c41' }
+
+// The lesson's tokens with a Hindi line put in after each English piece that ends there.
+// pieces: [{ end }] from pairLines; hiLine(n) / word(tok, i) render a Hindi line / a word.
+function withHindi(tokens, pieces, hiLine, word) {
+  const out = []
+  let pos = 0
+  let next = 0
+  let afterHi = false // drop the line break right after a Hindi line (it is a block already)
+  tokens.forEach((tok, i) => {
+    const end = pos + tok.text.length
+    if (tok.type === 'gap') {
+      let text = tok.text
+      let at = pos
+      while (next < pieces.length && pieces[next].end <= end) {
+        const cut = Math.max(0, pieces[next].end - at)
+        let part = text.slice(0, cut)
+        if (afterHi) part = part.replace(/^\n+/, '')
+        if (part) out.push(<span key={`g${i}-${next}`}>{part}</span>)
+        out.push(hiLine(next))
+        afterHi = true
+        text = text.slice(cut)
+        at += cut
+        next++
+      }
+      if (afterHi) text = text.replace(/^\n+/, '')
+      if (text) {
+        out.push(<span key={i}>{text}</span>)
+        afterHi = false
+      }
+    } else {
+      out.push(word(tok, i))
+      afterHi = false
+      while (next < pieces.length && pieces[next].end <= end) {
+        out.push(hiLine(next++))
+        afterHi = true
+      }
+    }
+    pos = end
+  })
+  while (next < pieces.length) out.push(hiLine(next++))
+  return out
+}
 
 // One reading lesson: a story (/reading/:lesson) or a book lesson (/book/:lesson, kind="book").
 // Every word can be tapped to hear it and see its meaning.
@@ -50,6 +92,7 @@ export default function Reading({ params, profile, kind = 'stories' }) {
   const isDone = profile.lessonsDone?.includes(params.lesson)
 
   const [showHi, setShowHi] = useState(false)
+  const [noHiVoice, setNoHiVoice] = useState(false) // this device has no Hindi voice
   const [picked, setPicked] = useState(null)
   const [pickMode, setPickMode] = useState(false)
   const [chosen, setChosen] = useState([]) // token indexes chosen as difficult
@@ -91,6 +134,15 @@ export default function Reading({ params, profile, kind = 'stories' }) {
   }
   const readAlong = useReadAlong(tokens, { onFinish: praise, onStop: saveMissed })
   const readAloud = useReadAloud(tokens)
+  // Hindi mode: the Hindi line under each English line (or sentence); "Read aloud" then reads Hindi
+  const hiPieces = useMemo(() => (story ? pairLines(story.en, story.hi) : []), [story])
+  const hiLines = useMemo(() => hiPieces.map((p) => p.hi), [hiPieces])
+  const hiAloud = useReadAloudLines(hiLines)
+  const aloudOn = readAloud.speaking || hiAloud.speaking
+  const stopAloud = () => {
+    readAloud.stop()
+    hiAloud.stop()
+  }
 
   // words of this lesson still waiting in "Say the word" practice
   const missedHere = []
@@ -217,7 +269,7 @@ export default function Reading({ params, profile, kind = 'stories' }) {
               onClick={() => {
                 if (readAlong.listening) readAlong.stop()
                 else {
-                  readAloud.stop()
+                  stopAloud()
                   readAlong.start()
                 }
               }}
@@ -250,29 +302,44 @@ export default function Reading({ params, profile, kind = 'stories' }) {
       <article className={`story card ${pickMode ? 'picking' : ''} ${readAlong.listening ? 'listening' : ''}`} lang="en">
         <div className="story-actions top">
           <button
-            className={`btn btn-sound ${readAloud.speaking ? 'speaking' : ''}`}
+            className={`btn btn-sound ${aloudOn ? 'speaking' : ''}`}
             onClick={() => {
-              if (!readAloud.speaking) readAlong.stop()
-              readAloud.toggle()
+              if (aloudOn) return stopAloud()
+              readAlong.stop()
+              if (showHi) {
+                setNoHiVoice(!hasVoice('hi-IN'))
+                hiAloud.start()
+              } else readAloud.start()
             }}
           >
-            {readAloud.speaking ? <>⏹️ {t('readAloudStop')}</> : <>🔊 {t('readAloud')}</>}
+            {aloudOn ? <>⏹️ {t('readAloudStop')}</> : showHi ? <>🔊 {t('readAloudHi')}</> : <>🔊 {t('readAloud')}</>}
           </button>
           <button
-            className="btn btn-sound hi"
+            className={`btn btn-sound hi ${showHi ? 'active' : ''}`}
+            aria-pressed={showHi}
             onClick={() => {
+              stopAloud()
               setShowHi(!showHi)
-              if (!showHi) speakHi(story.hi)
             }}
           >
-            {showHi ? '🙈' : '👀'} {t(showHi ? 'hideHindi' : 'showHindi')}
+            {showHi ? '✅' : 'अ'} {t('showHindi')} {showHi ? t('hiOn') : t('hiOff')}
           </button>
         </div>
-        <p className="story-text">
-          {tokens.map((tok, i) =>
-            tok.type === 'gap' ? (
-              <span key={i}>{tok.text}</span>
-            ) : (
+        {showHi && noHiVoice && <p className="error-text center">{t('noHindiVoice')}</p>}
+        <p className={`story-text ${showHi ? 'with-hi' : ''}`}>
+          {withHindi(
+            tokens,
+            showHi ? hiPieces : [],
+            (n) => (
+              <span
+                key={`hi${n}`}
+                className={`hi-line ${hiPieces[n].paraEnd ? 'para-end' : ''} ${hiAloud.current === n ? 'hi-speaking' : ''}`}
+                lang="hi"
+              >
+                {hiPieces[n].hi}
+              </span>
+            ),
+            (tok, i) => (
               <button
                 key={i}
                 className={`rw ${tok.entry?.word ? 'rw-key' : ''} ${tok.entry ? '' : 'rw-unknown'} ${
@@ -292,12 +359,6 @@ export default function Reading({ params, profile, kind = 'stories' }) {
             ),
           )}
         </p>
-
-        {showHi && (
-          <p className="story-hi pop-in" lang="hi">
-            {story.hi}
-          </p>
-        )}
 
       </article>
 

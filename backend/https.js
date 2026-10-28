@@ -44,7 +44,10 @@ async function loadCert(ips) {
 async function startHttps(app, port) {
   const ips = lanAddresses();
   const creds = await loadCert(ips);
-  https.createServer(creds, app).listen(port, () => {
+  const server = https.createServer(creds, app);
+  // a busy HTTPS port only turns off phone mic access, the app keeps running
+  server.on('error', (err) => console.warn(`HTTPS not started on port ${port}: ${err.code || err.message}`));
+  server.listen(port, () => {
     console.log(`HTTPS (for phones, mic works): https://localhost:${port}`);
     for (const ip of ips) console.log(`   on this Wi-Fi:              https://${ip}:${port}`);
   });
