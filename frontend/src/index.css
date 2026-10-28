@@ -2387,6 +2387,39 @@ h3 {
   font-weight: 800;
 }
 
+/* Book tab: Class 3 / Class 8 switch */
+.book-switch {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.book-tab {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 2px solid var(--line);
+  background: var(--card);
+  font-weight: 800;
+  font-size: 1.05rem;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.book-tab:hover {
+  transform: translateY(-2px);
+}
+
+.book-tab.active {
+  background: #6d4c41;
+  border-color: #6d4c41;
+  color: #fff;
+}
+
+.book-tab.active .bi-sub {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 .lesson-missed {
   color: #e91e63;
 }

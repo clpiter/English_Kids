@@ -32,7 +32,7 @@ async function downloadContent() {
     // offline, or file missing (e.g. Vite dev server without a build): try the API
   }
   const [words, book] = await Promise.all([api.get('/words'), api.get('/book')])
-  return { version: 'api', ...words.data, book: book.data }
+  return { version: 'api', ...words.data, books: book.data.books }
 }
 
 // Show the saved copy at once (if any), then update it when the file has changed
@@ -50,6 +50,7 @@ export const fetchWords = createAsyncThunk('words/fetch', async (_, { dispatch }
   }
 })
 
+// `book.lessons` = the lessons of all books (each knows its `bookId`); `books` = the books themselves
 const EMPTY_BOOK = { title: '', titleHi: '', lessons: [] }
 
 const wordsSlice = createSlice({
@@ -60,20 +61,24 @@ const wordsSlice = createSlice({
     stories: [],
     glossary: {},
     book: EMPTY_BOOK,
+    books: [],
     version: null,
     status: 'idle',
     error: null,
   },
   reducers: {
     contentLoaded(state, action) {
-      const { version, categories, words, stories, glossary, book } = action.payload
+      const { version, categories, words, stories, glossary } = action.payload
+      // older saved copies had a single `book`
+      const books = action.payload.books || (action.payload.book ? [{ id: 'santoor', ...action.payload.book }] : [])
       state.status = 'ready'
       state.error = null
       state.version = version || null
       state.categories = categories
       state.list = words
       state.stories = stories || []
-      state.book = book || EMPTY_BOOK
+      state.books = books.map(({ lessons, ...info }) => ({ ...info, lessonIds: lessons.map((l) => l.id) }))
+      state.book = { ...EMPTY_BOOK, lessons: books.flatMap((b) => b.lessons.map((l) => ({ ...l, bookId: l.bookId || b.id }))) }
       // tapped words in the book are explained from its own word lists too
       const bookGlossary = {}
       for (const lesson of state.book.lessons) {

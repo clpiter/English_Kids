@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const Word = require('./models/Word');
 const { words } = require('./data/words');
 const { loadImageCredits } = require('./data/imageCredits');
-const { book } = require('./data/book');
+const { books } = require('./data/book');
 const wordsRouter = require('./routes/words');
 const profilesRouter = require('./routes/profiles');
 const { startHttps } = require('./https');
@@ -40,7 +40,7 @@ app.use(express.json());
 
 app.use('/api/words', wordsRouter);
 app.use('/api/profiles', profilesRouter);
-app.get('/api/book', (req, res) => res.json(book));
+app.get('/api/book', (req, res) => res.json({ books }));
 
 // Serve the built React app (npm run build in /frontend) in production
 const dist = path.join(__dirname, '..', 'frontend', 'dist');

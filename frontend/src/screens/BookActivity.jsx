@@ -23,7 +23,9 @@ export default function BookActivity({ params, profile }) {
   const [which, setWhich] = useState(['all', 'missed'].includes(params.words) ? params.words : 'mine')
   // freeze the words for this game; wrong options come from the whole book
   const [pool] = useState(() => (lesson ? bookPool(lesson, words, glossary, profile, which) : []))
-  const [all] = useState(() => book.lessons.flatMap((l) => lessonWords(l, words, glossary)))
+  const [all] = useState(() =>
+    book.lessons.filter((l) => l.bookId === lesson?.bookId).flatMap((l) => lessonWords(l, words, glossary)),
+  )
   // "Say the word" works with any number of words; the choice games need 4
   const enough = activity === 'sayit' ? pool.length >= 1 : pool.length >= 4
 

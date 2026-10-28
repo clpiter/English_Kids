@@ -784,10 +784,18 @@ for (const lesson of lessons) {
 }
 
 const book = {
+  id: 'santoor',
   title: 'Santoor — English, Class 3',
+  short: 'Class 3',
+  shortHi: 'कक्षा 3',
   titleHi: 'संतूर — अंग्रेज़ी, कक्षा 3',
   source: 'NCERT',
   lessons,
 };
 
-module.exports = { book };
+// all reading books, in the order the Book tab shows them
+const { book8 } = require('./book8');
+const books = [book, book8];
+for (const b of books) for (const l of b.lessons) l.bookId = b.id;
+
+module.exports = { book, books };

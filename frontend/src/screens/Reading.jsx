@@ -29,9 +29,14 @@ export default function Reading({ params, profile, kind = 'stories' }) {
   const { categories, list: words, stories, glossary, book } = useSelector((s) => s.words)
   const isBook = kind === 'book'
   const screen = isBook ? 'book' : 'reading'
+  const lessonId = params.lesson
   const list = useMemo(
-    () => (isBook ? book.lessons.map((l) => ({ ...l, titleEn: l.title, category: 'book' })) : stories),
-    [isBook, book, stories],
+    () => {
+      if (!isBook) return stories
+      const bookId = book.lessons.find((l) => l.id === lessonId)?.bookId
+      return book.lessons.filter((l) => l.bookId === bookId).map((l) => ({ ...l, titleEn: l.title, category: 'book' }))
+    },
+    [isBook, book, stories, lessonId],
   )
   const { t, bi } = useT()
   useAnnounce(VOICE.reading)
@@ -41,7 +46,7 @@ export default function Reading({ params, profile, kind = 'stories' }) {
   const position = list.findIndex((s) => s.id === params.lesson)
   const prevLesson = list[position - 1]
   const nextLesson = list[position + 1]
-  const practiceMine = story && isBook ? bookPool(book.lessons[position], words, glossary, profile, 'mine').length : 0
+  const practiceMine = story && isBook ? bookPool(book.lessons.find((l) => l.id === lessonId), words, glossary, profile, 'mine').length : 0
   const isDone = profile.lessonsDone?.includes(params.lesson)
 
   const [showHi, setShowHi] = useState(false)
@@ -176,7 +181,7 @@ export default function Reading({ params, profile, kind = 'stories' }) {
 
   return (
     <section className="screen narrow">
-      <BackButton screen={screen} params={isBook ? {} : { category: story.category }} />
+      <BackButton screen={screen} params={isBook ? { book: story.bookId } : { category: story.category }} />
 
       <div className="reading-head" style={{ '--c': info.color }}>
         <span className="reading-badge">

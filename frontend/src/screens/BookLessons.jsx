@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { go, useNav } from '../nav'
 import { useT } from '../useT'
@@ -5,15 +6,34 @@ import ProgressBar from '../components/ProgressBar'
 import { bookPool } from '../utils/book'
 import { VOICE, useAnnounce } from '../utils/voice'
 
-// The "Book" (किताब) tab: lessons of the reading book (/book)
-export default function BookLessons({ profile }) {
+const BOOK_KEY = 'ek-book'
+const savedBook = () => {
+  try {
+    return localStorage.getItem(BOOK_KEY)
+  } catch {
+    return null
+  }
+}
+
+// The "Book" (किताब) tab: the lessons of one reading book (/book?book=santoor|class8)
+export default function BookLessons({ params, profile }) {
   const nav = useNav()
-  const { book, list: words, glossary } = useSelector((s) => s.words)
+  const { book: allBooks, books, list: words, glossary } = useSelector((s) => s.words)
   const { t, ts, bi } = useT()
   useAnnounce(VOICE.book)
 
+  // the book from the link, else the one opened last on this device, else the first
+  const book = books.find((b) => b.id === params.book) || books.find((b) => b.id === savedBook()) || books[0] || { lessonIds: [] }
+  useEffect(() => {
+    try {
+      if (book.id) localStorage.setItem(BOOK_KEY, book.id)
+    } catch {
+      // storage blocked: the first book opens next time
+    }
+  }, [book.id])
+
   const done = new Set(profile.lessonsDone || [])
-  const lessons = book.lessons
+  const lessons = allBooks.lessons.filter((l) => l.bookId === book.id)
   const doneCount = lessons.filter((l) => done.has(l.id)).length
   const firstNotDone = lessons.find((l) => !done.has(l.id))
 
@@ -27,7 +47,23 @@ export default function BookLessons({ profile }) {
 
   return (
     <section className="screen">
-      <div className="card lessons-head book-head">
+      {books.length > 1 && (
+        <div className="book-switch" role="tablist" aria-label="Books">
+          {books.map((b) => (
+            <button
+              key={b.id}
+              role="tab"
+              aria-selected={b.id === book.id}
+              className={`book-tab ${b.id === book.id ? 'active' : ''}`}
+              onClick={() => nav(go({ screen: 'book', params: { book: b.id } }))}
+            >
+              📕 {bi(b.shortHi || b.titleHi, b.short || b.title)}
+            </button>
+          ))}
+        </div>
+      )}
+
+      <div className="card lessons-head book-head" key={book.id}>
         <h1>📕 {bi(book.titleHi, book.title)}</h1>
         <p className="muted">{t('bookIntro')}</p>
         <ProgressBar value={doneCount} max={lessons.length} color="#6d4c41" />
@@ -44,7 +80,7 @@ export default function BookLessons({ profile }) {
       {lessons.length === 0 && <p className="center muted">{t('noStories')}</p>}
 
       {units.map((unit) => (
-        <div key={unit.title} className="lesson-group">
+        <div key={book.id + unit.title} className="lesson-group">
           {unit.title && <h2 className="section-title">{bi(unit.titleHi, unit.title)}</h2>}
           <div className="lesson-grid">
             {unit.lessons.map((l) => {

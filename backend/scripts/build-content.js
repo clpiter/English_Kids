@@ -13,7 +13,7 @@ const data = path.join(__dirname, '..', 'data');
 const { categories, words } = require(path.join(data, 'words'));
 const { stories } = require(path.join(data, 'stories'));
 const { glossary } = require(path.join(data, 'glossary'));
-const { book } = require(path.join(data, 'book'));
+const { books } = require(path.join(data, 'book'));
 const { loadImageCredits } = require(path.join(data, 'imageCredits'));
 
 const images = loadImageCredits();
@@ -32,7 +32,7 @@ const content = {
     .map((w) => ({ ...w, image: images[w.key]?.file || '', thumb: thumbFor(images[w.key]?.file) })),
   stories,
   glossary,
-  book,
+  books,
 };
 // changes whenever the content changes, so devices know when to update their saved copy
 const version = crypto.createHash('sha1').update(JSON.stringify(content)).digest('hex').slice(0, 12);
@@ -40,4 +40,4 @@ const version = crypto.createHash('sha1').update(JSON.stringify(content)).digest
 const out = path.join(__dirname, '..', '..', 'frontend', 'public', 'data', 'content.json');
 fs.mkdirSync(path.dirname(out), { recursive: true });
 fs.writeFileSync(out, JSON.stringify({ version, ...content }));
-console.log(`content.json: version ${version}, ${content.words.length} words, ${content.book.lessons.length} book lessons, ${Math.round(fs.statSync(out).size / 1024)} KB`);
+console.log(`content.json: version ${version}, ${content.words.length} words, ${content.books.map((b) => `${b.lessons.length} ${b.id}`).join(' + ')} book lessons, ${Math.round(fs.statSync(out).size / 1024)} KB`);
