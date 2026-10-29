@@ -211,6 +211,13 @@ export const STRINGS = {
     hi: 'शब्द पर दबाओ: आवाज़ सुनो। देर तक दबाओ: मतलब देखो।',
   },
   readAloud: { en: 'Read aloud', hi: 'पढ़कर सुनाओ' },
+  noteMeaning: { en: 'Meaning', hi: 'मतलब' },
+  noteMeaningHint: { en: 'Write the meaning in Hindi', hi: 'हिंदी में मतलब लिखो' },
+  noteSentence: { en: 'My sentence', hi: 'मेरा वाक्य' },
+  noteSentenceHint: { en: 'Write a sentence with "{word}"', hi: '"{word}" से एक वाक्य लिखो' },
+  noteSaved: { en: 'Saved!', hi: 'सहेज लिया!' },
+  noteUpdate: { en: 'Save changes', hi: 'बदलाव सहेजो' },
+  noteHear: { en: 'Hear my sentence', hi: 'मेरा वाक्य सुनो' },
   readAloudHi: { en: 'Read aloud in Hindi', hi: 'हिंदी में सुनाओ' },
   hiOn: { en: 'ON', hi: 'चालू' },
   noHindiVoice: {

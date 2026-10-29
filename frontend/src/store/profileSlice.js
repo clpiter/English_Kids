@@ -41,6 +41,12 @@ export const addMissed = createAsyncThunk(
   async ({ id, keys }) => (await api.post(`/profiles/${id}/missed`, { keys })).data,
 )
 
+// Save a word to "My words" with its meaning and the kid's own sentence: { id, key, en, hi, sentence }
+export const saveWord = createAsyncThunk(
+  'profiles/saveWord',
+  async ({ id, key, en, hi, sentence }) => (await api.post(`/profiles/${id}/words`, { key, en, hi, sentence })).data,
+)
+
 export const finishLesson = createAsyncThunk(
   'profiles/lesson',
   async ({ id, lesson }) => (await api.post(`/profiles/${id}/lessons`, { id: lesson })).data,
@@ -123,8 +129,17 @@ const profileSlice = createSlice({
         if (!p) return
         p.difficult = (p.difficult || []).filter((k) => !keys.includes(k))
         if (on !== false) p.difficult.push(...keys)
+        else p.wordNotes = (p.wordNotes || []).filter((n) => !keys.includes(n.key))
       })
       .addCase(setDifficult.fulfilled, upsert)
+      .addCase(saveWord.pending, (state, action) => {
+        const { id, key, en, hi, sentence } = action.meta.arg
+        const p = state.list.find((x) => x._id === id)
+        if (!p) return
+        if (!(p.difficult || []).includes(key)) p.difficult = [...(p.difficult || []), key]
+        p.wordNotes = [...(p.wordNotes || []).filter((n) => n.key !== key), { key, en, hi, sentence, date: new Date().toISOString() }]
+      })
+      .addCase(saveWord.fulfilled, upsert)
       .addCase(deleteProfile.fulfilled, (state, action) => {
         state.list = state.list.filter((p) => p._id !== action.payload)
         if (state.currentId === action.payload) state.currentId = null

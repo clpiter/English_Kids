@@ -148,8 +148,9 @@ h3 {
 }
 
 /* ---------- entrance animations (kept early: later state animations win) ---------- */
+/* backwards, not both: a transform left on .page would make fixed dialogs (word sheet) position inside the page */
 .page {
-  animation: pageIn 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation: pageIn 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
 }
 
 .category-grid > *,
@@ -169,7 +170,7 @@ h3 {
 .tiles > *,
 .search-results > *,
 .credits > * {
-  animation: rise 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+  animation: rise 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2) backwards;
 }
 
 .category-grid > :nth-child(2), .activity-grid > :nth-child(2), .lesson-grid > :nth-child(2), .profile-grid > :nth-child(2), .word-chips > :nth-child(2), .mistake-list > :nth-child(2), .stat-grid > :nth-child(2), .game-stats > :nth-child(2), .dw-list > :nth-child(2), .word-table > :nth-child(2), .history > :nth-child(2), .options > :nth-child(2), .mc-col > :nth-child(2), .memory-grid > :nth-child(2), .tiles > :nth-child(2), .search-results > :nth-child(2), .credits > :nth-child(2) {
@@ -2439,6 +2440,54 @@ h3 {
 }
 
 /* Book tab: Class 3 / Class 8 switch */
+/* word dialog: save with my meaning and my sentence */
+.word-note {
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 18px;
+  background: var(--soft);
+  display: grid;
+  gap: 10px;
+  text-align: left;
+}
+
+.word-note-title {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.word-note-label {
+  display: grid;
+  gap: 4px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.word-note textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.word-note-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sheet-sentence,
+.dw-mine {
+  color: var(--primary);
+  font-weight: 600;
+  font-style: italic;
+}
+
+.dw-mine {
+  text-align: left;
+  padding: 0;
+  background: none;
+}
+
 .book-switch {
   display: flex;
   gap: 8px;

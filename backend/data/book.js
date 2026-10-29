@@ -794,8 +794,9 @@ const book = {
 };
 
 // all reading books, in the order the Book tab shows them
+const { book7 } = require('./book7');
 const { book8 } = require('./book8');
-const books = [book, book8];
+const books = [book, book7, book8];
 for (const b of books) for (const l of b.lessons) l.bookId = b.id;
 
 module.exports = { book, books };

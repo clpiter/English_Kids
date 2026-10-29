@@ -63,6 +63,20 @@ const profileSchema = new mongoose.Schema(
     activityStats: { type: Map, of: activityStatsSchema, default: {} },
     // words the kid marked as difficult (word key, or "g:<word>" for everyday words)
     difficult: { type: [String], default: [] },
+    // what the kid wrote for a saved word: its meaning and their own sentence
+    wordNotes: {
+      type: [
+        {
+          _id: false,
+          key: { type: String, required: true, maxlength: 60 },
+          en: { type: String, maxlength: 60, default: '' },
+          hi: { type: String, maxlength: 200, default: '' },
+          sentence: { type: String, maxlength: 300, default: '' },
+          date: { type: Date, default: Date.now },
+        },
+      ],
+      default: [],
+    },
     // words the kid could not read aloud (read-along); cleared when said right in "Say the word"
     missedWords: { type: [String], default: [] },
     // reading lesson ids finished

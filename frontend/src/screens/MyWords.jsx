@@ -19,7 +19,16 @@ export default function MyWords({ profile }) {
   const [query, setQuery] = useState('')
   useAnnounce(VOICE.words)
 
-  const mine = (profile.difficult || []).map((k) => resolveDifficult(k, words, glossary)).filter(Boolean)
+  // the kid's own meaning and sentence (from the word dialog) win over the app's meaning
+  const notes = new Map((profile.wordNotes || []).map((n) => [n.key, n]))
+  const mine = (profile.difficult || [])
+    .map((k) => {
+      const w = resolveDifficult(k, words, glossary)
+      const n = notes.get(k)
+      if (!w && !n) return null
+      return { key: k, en: n?.en || k.replace(/^g:/, ''), ...w, ...(n?.hi ? { hi: n.hi } : {}), sentence: n?.sentence || '' }
+    })
+    .filter(Boolean)
   const toggle = (key, on) => dispatch(setDifficult({ id: profile._id, key, on }))
   const playable = getPool(words, 'difficult', profile).length >= 4
 
@@ -90,6 +99,11 @@ export default function MyWords({ profile }) {
                     </span>
                   )}
                   {w.hi && <span className="dw-hi">{w.hi}</span>}
+                  {w.sentence && (
+                    <button className="dw-mine" onClick={() => speakEn(w.sentence)}>
+                      ✍️ {w.sentence}
+                    </button>
+                  )}
                   {w.word?.sentenceEn && <span className="dw-ex">💡 {w.word.sentenceEn}</span>}
                 </div>
                 <div className="dw-actions">
