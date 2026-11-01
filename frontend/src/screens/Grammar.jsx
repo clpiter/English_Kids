@@ -27,6 +27,7 @@ export default function Grammar({ profile }) {
       </div>
 
       {/* 1. tenses */}
+      <div className="grammar-section gs-tense">
       <h2 className="grammar-part">⏰ {t('tensesTitle')}</h2>
       {TIMES.map((tm) => (
         <div key={tm.id} className="lesson-group">
@@ -67,13 +68,14 @@ export default function Grammar({ profile }) {
         </span>
         <span className="tense-link-arrow">▶</span>
       </button>
+      </div>
 
       {/* 2. sentence structures, easy to hard */}
       <h2 className="grammar-part">🧱 {t('gramStructures')}</h2>
       {LEVELS.map((lv) => {
         const list = STRUCTURES.filter((s) => s.level === lv.id)
         return (
-          <div key={lv.id} className="lesson-group">
+          <div key={lv.id} className={`lesson-group grammar-section gs-${lv.id}`}>
             <h2 className="section-title">
               {lv.icon} {bi(lv.hi, lv.en)}
             </h2>

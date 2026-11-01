@@ -2745,6 +2745,48 @@ h3 {
   font-size: 1.1rem;
 }
 
+/* grammar: a dark panel for each section (tenses / easy / medium / hard); cards stay light */
+.grammar-section {
+  --panel: #1e3a5f;
+  background: linear-gradient(160deg, var(--panel), color-mix(in srgb, var(--panel) 70%, #000));
+  border-radius: 24px;
+  padding: 14px 16px 18px;
+  margin: 16px 0;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.grammar-section .section-title,
+.grammar-section .grammar-part {
+  color: #fff;
+  margin-top: 6px;
+}
+
+.grammar-section .lesson-card,
+.grammar-section .tense-link {
+  color: var(--text);
+}
+
+.grammar-section .lesson-group {
+  margin: 0;
+}
+
+.gs-tense {
+  --panel: #283593; /* indigo */
+}
+
+.gs-easy {
+  --panel: #1b5e20; /* dark green */
+}
+
+.gs-medium {
+  --panel: #a84300; /* dark orange */
+}
+
+.gs-hard {
+  --panel: #8e1b1b; /* dark red */
+}
+
 /* grammar: sentence structures */
 .grammar-part {
   margin: 26px 0 4px;

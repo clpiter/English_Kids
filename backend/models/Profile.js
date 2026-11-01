@@ -59,7 +59,7 @@ const profileSchema = new mongoose.Schema(
     device: { type: String, default: '', index: true, maxlength: 64 },
     avatar: { type: String, default: '🦁' },
     color: { type: String, default: '#ff8a65' },
-    age: { type: Number, min: 2, max: 14 },
+    age: { type: Number, min: 3, max: 25 },
     stars: { type: Number, default: 0 },
     // word keys the kid has seen in "Learn" or practised in a game
     learned: { type: [String], default: [] },

@@ -7,7 +7,8 @@ import { VOICE, useAnnounce } from '../utils/voice'
 
 const AVATARS = ['🦁', '🐼', '🐯', '🐰', '🦊', '🐨', '🐸', '🐵', '🦄', '🐧', '🐙', '🦖', '🐶', '🐱', '🐻', '🦋']
 const COLORS = ['#ff8a65', '#f06292', '#ba68c8', '#7986cb', '#4fc3f7', '#4db6ac', '#81c784', '#ffd54f']
-const AGES = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+// ages 3 to 25
+const AGES = Array.from({ length: 23 }, (_, i) => i + 3)
 
 export default function ProfileForm({ id }) {
   const dispatch = useDispatch()
