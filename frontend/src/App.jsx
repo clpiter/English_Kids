@@ -19,6 +19,13 @@ const MyWords = lazy(() => import('./screens/MyWords'))
 const BookLessons = lazy(() => import('./screens/BookLessons'))
 const BookActivity = lazy(() => import('./screens/BookActivity'))
 const Credits = lazy(() => import('./screens/Credits'))
+const Tenses = lazy(() => import('./screens/Tenses'))
+const TenseLesson = lazy(() => import('./screens/TenseLesson'))
+const TensePractice = lazy(() => import('./screens/TensePractice'))
+const AdminPanel = lazy(() => import('./screens/AdminPanel'))
+const Grammar = lazy(() => import('./screens/Grammar'))
+const StructureLesson = lazy(() => import('./screens/StructureLesson'))
+const StructurePractice = lazy(() => import('./screens/StructurePractice'))
 import { fetchWords } from './store/wordsSlice'
 import { fetchProfiles, selectCurrentProfile } from './store/profileSlice'
 import { useT } from './useT'
@@ -74,6 +81,7 @@ function AppRoutes() {
       <Route path="/profile/new" element={<ProfileForm key="new" />} />
       <Route path="/profile/:id/edit" element={<EditProfile />} />
       <Route path="/credits" element={<Credits />} />
+      <Route path="/admin" element={<AdminPanel />} />
       <Route path="/home" element={kid(Home)} />
       <Route path="/category/:category" element={kid(CategoryScreen)} />
       <Route path="/category/:category/learn" element={kid(Learn)} />
@@ -86,6 +94,13 @@ function AppRoutes() {
       <Route path="/book/:lesson" element={book(BookReader)} />
       <Route path="/book/:lesson/play/:activity" element={book(BookActivity)} />
       <Route path="/book/:lesson/play/:activity/result" element={book(Result)} />
+      {/* grammar and tenses: English names first, then Hindi */}
+      <Route path="/grammar" element={book(Grammar)} />
+      <Route path="/grammar/:structure" element={book(StructureLesson)} />
+      <Route path="/grammar/:structure/practice" element={book(StructurePractice)} />
+      <Route path="/tense" element={book(Tenses)} />
+      <Route path="/tense/:tense" element={book(TenseLesson)} />
+      <Route path="/tense/:tense/practice" element={book(TensePractice)} />
       <Route path="/words" element={kid(MyWords)} />
       <Route path="/progress" element={kid(Progress)} />
       <Route path="/progress/:tab" element={kid(Progress)} />

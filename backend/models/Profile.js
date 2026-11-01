@@ -39,9 +39,24 @@ const activityStatsSchema = new mongoose.Schema(
   { _id: false }
 );
 
+// one tense or sentence structure: "tense-present-simple", "gram-can"
+const grammarScoreSchema = new mongoose.Schema(
+  {
+    played: { type: Number, default: 0 },
+    best: { type: Number, default: 0 }, // percent
+    last: { type: Number, default: 0 }, // percent
+    correct: { type: Number, default: 0 },
+    total: { type: Number, default: 0 },
+    date: { type: Date },
+  },
+  { _id: false }
+);
+
 const profileSchema = new mongoose.Schema(
   {
     name: { type: String, required: true, trim: true, maxlength: 30 },
+    // the browser / phone the profile belongs to (random id kept in a cookie there); '' = made before devices
+    device: { type: String, default: '', index: true, maxlength: 64 },
     avatar: { type: String, default: '🦁' },
     color: { type: String, default: '#ff8a65' },
     age: { type: Number, min: 2, max: 14 },
@@ -81,6 +96,8 @@ const profileSchema = new mongoose.Schema(
     missedWords: { type: [String], default: [] },
     // reading lesson ids finished
     lessonsDone: { type: [String], default: [] },
+    // grammar games: key -> scores (key = "tense-<id>", "gram-<id>", or "tense-mix" / "gram-mix")
+    grammarScores: { type: Map, of: grammarScoreSchema, default: {} },
     streak: { type: Number, default: 0 },
     lastPlayed: { type: Date },
   },

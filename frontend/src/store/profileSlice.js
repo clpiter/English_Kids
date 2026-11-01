@@ -47,6 +47,12 @@ export const saveWord = createAsyncThunk(
   async ({ id, key, en, hi, sentence }) => (await api.post(`/profiles/${id}/words`, { key, en, hi, sentence })).data,
 )
 
+// A finished grammar game: { id, key: "tense-<id>" | "gram-<id>" | "tense-mix" | "gram-mix", correct, total }
+export const saveGrammar = createAsyncThunk(
+  'profiles/grammar',
+  async ({ id, key, correct, total }) => (await api.post(`/profiles/${id}/grammar`, { key, correct, total })).data,
+)
+
 export const finishLesson = createAsyncThunk(
   'profiles/lesson',
   async ({ id, lesson }) => (await api.post(`/profiles/${id}/lessons`, { id: lesson })).data,
@@ -116,6 +122,7 @@ const profileSlice = createSlice({
       .addCase(markLearned.fulfilled, upsert)
       .addCase(submitResults.fulfilled, upsert)
       .addCase(finishLesson.fulfilled, upsert)
+      .addCase(saveGrammar.fulfilled, upsert)
       .addCase(addMissed.pending, (state, action) => {
         const { id, keys } = action.meta.arg
         const p = state.list.find((x) => x._id === id)

@@ -38,13 +38,34 @@ function updateStreak(profile) {
   profile.lastPlayed = today;
 }
 
+// Each browser / phone keeps a random device id in a cookie and sends it as "X-Device-Id":
+// it only sees the profiles made on it.
+const DEVICE = /^[A-Za-z0-9-]{16,64}$/;
+const deviceOf = (req) => (DEVICE.test(req.get('x-device-id') || '') ? req.get('x-device-id') : '');
+
+// may this device change / delete the profile? (profiles made before devices: yes)
+function assertOwner(profile, req) {
+  if (profile.device && profile.device !== deviceOf(req)) {
+    const err = new Error('This profile belongs to another device');
+    err.status = 403;
+    throw err;
+  }
+}
+
 router.get('/', async (req, res) => {
-  const profiles = await Profile.find().sort({ createdAt: 1 });
-  res.json(profiles);
+  const device = deviceOf(req);
+  if (!device) return res.json(await Profile.find({ device: '' }).sort({ createdAt: 1 }));
+  // profiles made before devices that this browser already used ("X-Claim": their ids) become its own
+  const claim = String(req.get('x-claim') || '')
+    .split(',')
+    .filter((id) => /^[a-f0-9]{24}$/.test(id))
+    .slice(0, 20);
+  if (claim.length) await Profile.updateMany({ _id: { $in: claim }, device: '' }, { device });
+  res.json(await Profile.find({ device }).sort({ createdAt: 1 }));
 });
 
 router.post('/', async (req, res) => {
-  const profile = await Profile.create(pick(req.body));
+  const profile = await Profile.create({ ...pick(req.body), device: deviceOf(req) });
   res.status(201).json(profile);
 });
 
@@ -54,6 +75,7 @@ router.get('/:id', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   const profile = await findProfile(req.params.id);
+  assertOwner(profile, req);
   profile.set(pick(req.body));
   await profile.save();
   res.json(profile);
@@ -61,6 +83,7 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   const profile = await findProfile(req.params.id);
+  assertOwner(profile, req);
   await profile.deleteOne();
   res.json({ ok: true });
 });
@@ -190,6 +213,32 @@ router.post('/:id/lessons', async (req, res) => {
   if (typeof id !== 'string' || !id) return res.status(400).json({ message: 'id is required' });
   const profile = await findProfile(req.params.id);
   profile.lessonsDone.addToSet(id);
+  updateStreak(profile);
+  await profile.save();
+  res.json(profile);
+});
+
+// A finished grammar game: { key: "tense-past-simple" | "gram-can" | "tense-mix" | "gram-mix", correct, total }
+router.post('/:id/grammar', async (req, res) => {
+  const { key } = req.body;
+  const correct = Math.max(0, Math.floor(Number(req.body.correct) || 0));
+  const total = Math.max(0, Math.floor(Number(req.body.total) || 0));
+  if (typeof key !== 'string' || !/^(tense|gram)-[a-z0-9-]{2,40}$/.test(key) || !total || correct > total) {
+    return res.status(400).json({ message: 'key, correct and total are required' });
+  }
+  const profile = await findProfile(req.params.id);
+  const old = profile.grammarScores.get(key) || {};
+  const score = Math.round((correct / total) * 100);
+  profile.grammarScores.set(key, {
+    played: (old.played || 0) + 1,
+    best: Math.max(old.best || 0, score),
+    last: score,
+    correct: (old.correct || 0) + correct,
+    total: (old.total || 0) + total,
+    date: new Date(),
+  });
+  // 70% or more: the tense / structure counts as learned
+  if (score >= 70 && !key.endsWith('-mix')) profile.lessonsDone.addToSet(key);
   updateStreak(profile);
   await profile.save();
   res.json(profile);

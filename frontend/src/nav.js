@@ -12,6 +12,10 @@ import { useNavigate } from 'react-router-dom'
 //   /reading, /reading/:lesson             reading lessons, e.g. /reading/animals-1
 //   /book, /book/:lesson                   the reading books (?book=santoor|class8) and one lesson
 //   /book/:lesson/play/:activity           a game with that lesson's words (?words=mine|all)
+//   /grammar, /grammar/:structure          sentence structures (easy to hard) and one structure
+//   /grammar/:structure/practice           structure games (?mode=fill..., structure "mix" = all)
+//   /tense, /tense/:tense                  the 12 tenses and one tense (structure, examples)
+//   /tense/:tense/practice                 tense quiz (tense = an id, or "mix" for all tenses)
 //   /words                                 my difficult words
 //   /progress, /progress/:tab              progress details
 //   /credits                               photo credits
@@ -27,9 +31,16 @@ const PATHS = {
   book: (p) => (p.lesson ? `/book/${p.lesson}` : p.book ? `/book?book=${p.book}` : '/book'),
   bookActivity: (p) => `/book/${p.lesson}/play/${p.activity}${p.words ? `?words=${p.words}` : ''}`,
   bookResult: (p) => `/book/${p.lesson}/play/${p.activity}/result`,
+  grammar: () => '/grammar',
+  structure: (p) => `/grammar/${p.structure}`,
+  structurePractice: (p) => `/grammar/${p.structure}/practice${p.mode ? `?mode=${p.mode}` : ''}`,
+  tenses: () => '/tense',
+  tense: (p) => `/tense/${p.tense}`,
+  tensePractice: (p) => `/tense/${p.tense}/practice${p.mode ? `?mode=${p.mode}` : ''}`,
   words: () => '/words',
   progress: (p) => (p.tab ? `/progress/${p.tab}` : '/progress'),
   credits: () => '/credits',
+  admin: () => '/admin',
 }
 
 export const pathFor = (screen, params = {}) => (PATHS[screen] || PATHS.home)(params)

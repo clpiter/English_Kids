@@ -5,8 +5,8 @@ import { useT } from '../useT'
 
 const TABS = [
   { to: '/home', icon: '🏠', label: 'tabLearn', also: ['/category'] },
+  { to: '/grammar', icon: '📐', label: 'tabGrammar', also: ['/tense'] },
   { to: '/book', icon: '📕', label: 'tabBook' },
-  { to: '/reading', icon: '📖', label: 'tabRead' },
   { to: '/words', icon: '⭐', label: 'tabWords' },
   { to: '/progress', icon: '📊', label: 'tabProgress' },
 ]

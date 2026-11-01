@@ -80,6 +80,14 @@ export default function TopBar() {
             </button>
           </div>
         )}
+        <button className="theme-btn login-btn" onClick={() => nav(go({ screen: 'admin' }))} title={ts('adminLogin')} aria-label={ts('adminLogin')}>
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <circle cx="12" cy="8" r="4" fill="currentColor" />
+            <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" fill="currentColor" />
+            <rect x="15" y="13" width="8" height="7" rx="1.5" fill="#ffb300" stroke="var(--card)" strokeWidth="1.2" />
+            <path d="M17 13v-1.5a2 2 0 0 1 4 0V13" fill="none" stroke="#ffb300" strokeWidth="1.6" />
+          </svg>
+        </button>
       </div>
     </header>
   )

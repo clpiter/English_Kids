@@ -59,6 +59,28 @@ export default function CategoryScreen({ params, profile }) {
         <span className="learn-banner-arrow">▶</span>
       </button>
 
+      <h2 className="section-title">
+        🔤 {t('wordsHere')} ({pool.length})
+      </h2>
+      <div className="word-chips">
+        {pool.map((w) => {
+          const level = profile.mastery?.[w.key] ?? 0
+          return (
+            <button key={w.key} className="word-chip" onClick={() => speakWord(w)} title={w.hi}>
+              <WordImage word={w} size="sm" />
+              <span className="word-chip-text">
+                <b>{w.en}</b>
+                <small>{w.hi}</small>
+              </span>
+              <span className="word-chip-level" aria-label={`level ${level}`}>
+                {'●'.repeat(level)}
+                <span className="dim">{'●'.repeat(5 - level)}</span>
+              </span>
+            </button>
+          )
+        })}
+      </div>
+
       <h2 className="section-title">🎮 {t('games')}</h2>
       <div className="activity-grid">
         <button
@@ -87,28 +109,6 @@ export default function CategoryScreen({ params, profile }) {
               <span className="activity-icon">{a.icon}</span>
               <span className="activity-name">{bi(a.hi, a.en)}</span>
               <span className="activity-best">{best !== undefined ? `${starsFor(best)} ${best}%` : ' '}</span>
-            </button>
-          )
-        })}
-      </div>
-
-      <h2 className="section-title">
-        🔤 {t('wordsHere')} ({pool.length})
-      </h2>
-      <div className="word-chips">
-        {pool.map((w) => {
-          const level = profile.mastery?.[w.key] ?? 0
-          return (
-            <button key={w.key} className="word-chip" onClick={() => speakWord(w)} title={w.hi}>
-              <WordImage word={w} size="sm" />
-              <span className="word-chip-text">
-                <b>{w.en}</b>
-                <small>{w.hi}</small>
-              </span>
-              <span className="word-chip-level" aria-label={`level ${level}`}>
-                {'●'.repeat(level)}
-                <span className="dim">{'●'.repeat(5 - level)}</span>
-              </span>
             </button>
           )
         })}

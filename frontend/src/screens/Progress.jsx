@@ -12,11 +12,15 @@ import { getPool } from '../utils/questions'
 import { wordFromKey } from '../utils/reading'
 import { speakWord } from '../utils/speech'
 import { VOICE, useAnnounce } from '../utils/voice'
+import { BookProgress, GrammarProgress } from './ProgressGrammarBooks'
+import { bookProgress, grammarProgress } from '../utils/progress'
 
 const TABS = [
   { id: 'overview', icon: '📊', label: 'overview' },
   { id: 'categories', icon: '📚', label: 'byCategory' },
   { id: 'games', icon: '🎮', label: 'byGame' },
+  { id: 'grammar', icon: '📐', label: 'tabGrammar' },
+  { id: 'books', icon: '📕', label: 'tabBook' },
   { id: 'mistakes', icon: '🎯', label: 'mistakes' },
 ]
 
@@ -57,6 +61,8 @@ export default function Progress({ params, profile }) {
       {tab === 'overview' && <Overview profile={profile} />}
       {tab === 'categories' && <Categories profile={profile} startOpen={params.open} />}
       {tab === 'games' && <Games profile={profile} />}
+      {tab === 'grammar' && <GrammarProgress profile={profile} />}
+      {tab === 'books' && <BookProgress profile={profile} />}
       {tab === 'mistakes' && <Mistakes profile={profile} />}
     </section>
   )
@@ -64,7 +70,10 @@ export default function Progress({ params, profile }) {
 
 function Overview({ profile }) {
   const nav = useNav()
-  const { categories, list: words, stories } = useSelector((s) => s.words)
+  const { categories, list: words, stories, book, books } = useSelector((s) => s.words)
+  const g = grammarProgress(profile)
+  const bp = bookProgress(profile, book.lessons, books)
+  const storiesRead = stories.filter((st) => profile.lessonsDone?.includes(st.id)).length
   const { t, bi, lang } = useT()
   const locale = lang === 'en' ? 'en-IN' : 'hi-IN'
   const learned = new Set(profile.learned)
@@ -85,7 +94,10 @@ function Overview({ profile }) {
         <Stat icon="✅" value={`${pct(correct, total)}%`} label={t('accuracy')} />
         <Stat icon="💡" value={hints} label={t('hintsUsed')} />
         <Stat icon="🎯" value={profile.openMistakes?.length || 0} label={t('mistakes')} />
-        <Stat icon="📖" value={`${profile.lessonsDone?.length || 0}/${stories.length}`} label={t('lessonsRead')} />
+        <Stat icon="📖" value={`${storiesRead}/${stories.length}`} label={t('progStoriesRead')} />
+        <Stat icon="📕" value={`${bp.reduce((n, b) => n + b.done, 0)}/${bp.reduce((n, b) => n + b.total, 0)}`} label={t('progBookLessons')} />
+        <Stat icon="⏰" value={`${g.tensesDone}/${g.tenses.length}`} label={t('progTensesLearned')} />
+        <Stat icon="🧱" value={`${g.structuresDone}/${g.structures.length}`} label={t('progStructuresLearned')} />
       </div>
 
       <div className="progress-layout">

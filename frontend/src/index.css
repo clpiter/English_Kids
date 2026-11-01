@@ -2440,6 +2440,435 @@ h3 {
 }
 
 /* Book tab: Class 3 / Class 8 switch */
+/* progress: grammar and books */
+.progress-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+  width: 100%;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  background: none;
+}
+
+.progress-row:hover {
+  background: var(--soft);
+}
+
+.progress-row-meta {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.progress-sub {
+  margin: 14px 0 4px;
+}
+
+.progress-lessons {
+  margin-top: 8px;
+}
+
+/* ---------- Admin panel ---------- */
+.btn-danger {
+  background: #e53935;
+  color: #fff;
+  border-color: #c62828;
+}
+
+.login-btn {
+  color: var(--text);
+}
+
+.admin-login {
+  display: grid;
+  gap: 12px;
+  text-align: center;
+}
+
+.admin-login .word-note-label {
+  text-align: left;
+}
+
+.admin-lock {
+  font-size: 3rem;
+}
+
+.password-row {
+  display: flex;
+  gap: 6px;
+}
+
+.password-row .text-input {
+  flex: 1;
+}
+
+.admin-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.admin-head h1 {
+  margin: 0;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-stats {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+  padding: 8px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.admin-table tbody tr {
+  cursor: pointer;
+}
+
+.admin-table tbody tr:hover,
+.admin-table tbody tr.open {
+  background: var(--soft);
+}
+
+.admin-table td.admin-wrap {
+  white-space: normal;
+  min-width: 240px;
+}
+
+.admin-avatar {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.admin-details {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.admin-list {
+  margin: 4px 0 10px;
+  padding-left: 20px;
+  line-height: 1.7;
+}
+
+/* ---------- Tenses tab ---------- */
+.time-line {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 6px 0 10px;
+}
+
+.time-dot {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  color: #fff;
+  background: var(--c);
+}
+
+.tense-sign {
+  font-weight: 700;
+  color: var(--hi);
+}
+
+.tense-maker .maker-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.chip {
+  cursor: pointer;
+}
+
+.chip.on {
+  background: var(--c, var(--primary));
+  border-color: var(--c, var(--primary));
+  color: #fff;
+}
+
+.chip small {
+  opacity: 0.8;
+  font-size: 0.75em;
+}
+
+.maker-result {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 16px;
+  border-radius: 18px;
+  background: var(--soft);
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  font-weight: 800;
+  text-align: center;
+}
+
+.tense-lesson-head {
+  border-top: 6px solid var(--c);
+}
+
+.tense-use {
+  margin: 6px 0;
+}
+
+.structure-table {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.structure-row {
+  display: grid;
+  gap: 4px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: var(--soft);
+  border-left: 6px solid #43a047;
+}
+
+.structure-row.s-neg {
+  border-left-color: #e53935;
+}
+
+.structure-row.s-q {
+  border-left-color: #1e88e5;
+}
+
+.structure-kind {
+  font-weight: 800;
+}
+
+.structure-formula {
+  font-family: inherit;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.structure-example {
+  text-align: left;
+  padding: 0;
+  background: none;
+  font-style: italic;
+}
+
+.tense-examples {
+  display: grid;
+  gap: 12px;
+}
+
+.tense-example {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 2px solid var(--line);
+}
+
+.tense-en {
+  text-align: left;
+  padding: 0;
+  background: none;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.tense-hi {
+  color: var(--hi);
+  font-weight: 600;
+}
+
+.tense-forms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tense-options {
+  grid-template-columns: 1fr;
+}
+
+.tense-options .option {
+  font-size: 1.05rem;
+  min-height: 52px;
+}
+
+.order-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  min-height: 52px;
+  margin: 10px 0;
+}
+
+.order-line .slot {
+  width: auto;
+  min-width: 48px;
+  padding: 0 10px;
+}
+
+.word-tile {
+  width: auto;
+  min-width: 56px;
+  padding: 0 14px;
+  font-size: 1.1rem;
+}
+
+/* grammar: sentence structures */
+.grammar-part {
+  margin: 26px 0 4px;
+  font-size: 1.5rem;
+}
+
+.structure-formula-title {
+  font-family: inherit;
+  letter-spacing: 0.01em;
+}
+
+.key-part {
+  background: color-mix(in srgb, var(--primary) 22%, transparent);
+  color: var(--primary);
+  border-radius: 8px;
+  padding: 0 6px;
+}
+
+.tense-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  text-align: left;
+  font-size: 1.15rem;
+  border-left: 8px solid #ef6c00;
+}
+
+.tense-link-icon {
+  font-size: 2.2rem;
+}
+
+.tense-link-arrow {
+  margin-left: auto;
+  font-size: 1.4rem;
+}
+
+/* tense games */
+.preview-hi {
+  font-size: 0.9rem;
+}
+
+.verb-prompt {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+
+.verb-task {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 800;
+}
+
+.tense-chip {
+  background: #26a69a;
+  border-color: #26a69a;
+  color: #fff;
+}
+
+.tense-games {
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+.tense-options.few {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.listen-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.type-answer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.type-answer .text-input {
+  flex: 1 1 220px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.match-board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.match-col {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.match-item {
+  min-height: 64px;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.match-item.selected {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+  transform: scale(1.02);
+}
+
+@media (max-width: 520px) {
+  .match-item {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+}
+
 /* word dialog: save with my meaning and my sentence */
 .word-note {
   width: 100%;

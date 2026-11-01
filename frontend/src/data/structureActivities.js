@@ -1,0 +1,20 @@
+// Games for the sentence structures: /grammar/:structure/practice?mode=<id> (structure = an id or "mix")
+export const STRUCTURE_ACTIVITIES = [
+  { id: 'quiz', icon: '🎯', en: 'Mixed Quiz', hi: 'मिलाजुला अभ्यास', color: '#ef6c00' },
+  { id: 'fill', icon: '✏️', en: 'Fill the Gap', hi: 'ख़ाली जगह भरो', color: '#43a047', kinds: ['fill'] },
+  { id: 'type', icon: '⌨️', en: 'Write the Missing Words', hi: 'छूटे शब्द लिखो', color: '#00897b', kinds: ['type'] },
+  { id: 'hindi', icon: 'अ', en: 'Hindi to English', hi: 'हिंदी से अंग्रेज़ी', color: '#8e24aa', kinds: ['hindi'] },
+  { id: 'listen', icon: '👂', en: 'Listen & Choose', hi: 'सुनो और चुनो', color: '#1e88e5', kinds: ['listen'] },
+  { id: 'order', icon: '🧩', en: 'Make the Sentence', hi: 'वाक्य बनाओ', color: '#f4511e', kinds: ['order'] },
+  { id: 'truefalse', icon: '✅', en: 'Right or Wrong?', hi: 'सही या ग़लत?', color: '#5e35b1', kinds: ['truefalse'] },
+  { id: 'mistake', icon: '🕵️', en: 'Spot the Mistake', hi: 'ग़लती पकड़ो', color: '#6d4c41', kinds: ['mistake'] },
+  { id: 'match', icon: '🔗', en: 'Match the Pairs', hi: 'जोड़ी मिलाओ', color: '#d81b60', kinds: ['match'] },
+  { id: 'which', icon: '🔍', en: 'Find the Structure', hi: 'ढाँचा पहचानो', color: '#00acc1', kinds: ['which'], mixOnly: true },
+]
+
+export const structureActivity = (id) => STRUCTURE_ACTIVITIES.find((a) => a.id === id) || STRUCTURE_ACTIVITIES[0]
+
+export const STRUCTURE_QUIZ = {
+  single: ['fill', 'hindi', 'listen', 'truefalse', 'order', 'mistake', 'type', 'match', 'fill', 'hindi'],
+  mix: ['which', 'fill', 'hindi', 'truefalse', 'mistake', 'listen', 'order', 'which', 'match', 'fill'],
+}

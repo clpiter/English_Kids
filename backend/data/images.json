@@ -1546,5 +1546,284 @@
     "artist": "Zürich_Street_Parade_2011_010.jpg: niky81 derivative work: Bomazi",
     "license": "CC BY-SA 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "verbs:bring": {
+    "file": "/images/verbs/bring.jpg",
+    "title": "Gujarati carrying water pot.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gujarati_carrying_water_pot.jpg",
+    "artist": "Yann Forget",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:keep": {
+    "file": "/images/verbs/keep.jpg",
+    "title": "Books on the shelf Книги на полке.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Books_on_the_shelf_%D0%9A%D0%BD%D0%B8%D0%B3%D0%B8_%D0%BD%D0%B0_%D0%BF%D0%BE%D0%BB%D0%BA%D0%B5.jpg",
+    "artist": "Algeyav",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:buy": {
+    "file": "/images/verbs/buy.jpg",
+    "title": "Buying groceries in Mumbai (1109).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Buying_groceries_in_Mumbai_(1109).jpg",
+    "artist": "Nicolas Vigier",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "verbs:sell": {
+    "file": "/images/verbs/sell.jpg",
+    "title": "Vegetable vendor in Pune India.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Vegetable_vendor_in_Pune_India.jpg",
+    "artist": "Jonathansammy",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:ask": {
+    "file": "/images/verbs/ask.jpg",
+    "title": "1964 Hammond Slides Student Raising Hand.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:1964_Hammond_Slides_Student_Raising_Hand.jpg",
+    "artist": "Thomas Taylor Hammond (1920-1993)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:speak": {
+    "file": "/images/verbs/speak.jpg",
+    "title": "Reality Fairytale of the Horse and the Deer elderly woman speaking into microphone in Berendeyevo 2013.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Reality_Fairytale_of_the_Horse_and_the_Deer_elderly_woman_speaking_into_microphone_in_Berendeyevo_2013.jpg",
+    "artist": "Max Kuznetsov (photographer), Inna Ismailova (producer)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:study": {
+    "file": "/images/verbs/study.jpg",
+    "title": "School girl studying.JPG",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:School_girl_studying.JPG",
+    "artist": "User:Mattes",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "verbs:help": {
+    "file": "/images/verbs/help.jpg",
+    "title": "Children helping each other to fetch water 2.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Children_helping_each_other_to_fetch_water_2.jpg",
+    "artist": "Tonny Mpagi",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:sweep": {
+    "file": "/images/verbs/sweep.jpg",
+    "title": "Sweeping the floor.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sweeping_the_floor.jpg",
+    "artist": "Beendy234",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:push": {
+    "file": "/images/verbs/push.jpg",
+    "title": "A man pushing a cart with goods to the market.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_man_pushing_a_cart_with_goods_to_the_market.jpg",
+    "artist": "Emmaculate jacobine",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:catch": {
+    "file": "/images/verbs/catch.jpg",
+    "title": "Man catching ball 001.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Man_catching_ball_001.jpg",
+    "artist": "Sardaka",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:kick": {
+    "file": "/images/verbs/kick.jpg",
+    "title": "Boys playing street football in Egypt.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Boys_playing_street_football_in_Egypt.jpg",
+    "artist": "Mohamed Hozyen Ahmed",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:ride": {
+    "file": "/images/verbs/ride.jpg",
+    "title": "Mother and Child Riding Bicycle on Sidewalk of Songshan Road 20141004.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Mother_and_Child_Riding_Bicycle_on_Sidewalk_of_Songshan_Road_20141004.jpg",
+    "artist": "玄史生",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "verbs:drive": {
+    "file": "/images/verbs/drive.jpg",
+    "title": "Man driving a car (22627037394).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Man_driving_a_car_(22627037394).jpg",
+    "artist": "StockyPics",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "verbs:hug": {
+    "file": "/images/verbs/hug.jpg",
+    "title": "Human–canine friendship - girl hugging her dog tightly at golden hour in Laos.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Human%E2%80%93canine_friendship_-_girl_hugging_her_dog_tightly_at_golden_hour_in_Laos.jpg",
+    "artist": "Basile Morin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:wait": {
+    "file": "/images/verbs/wait.jpg",
+    "title": "Waiting for bus at a bus stop in Hyderabad.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Waiting_for_bus_at_a_bus_stop_in_Hyderabad.jpg",
+    "artist": "ReDHumus.Org Abonamos el cambio",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "verbs:stop": {
+    "file": "/images/verbs/stop.jpg",
+    "title": "Letterboxes Ocotillo Wells 2013.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Letterboxes_Ocotillo_Wells_2013.jpg",
+    "artist": "Tuxyso",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "verbs:win": {
+    "file": "/images/verbs/win.jpg",
+    "title": "Leonardo Gorski WSK Super Master Series U10 Champion, 2023 on the podium holding the winner´s trophy at 7 Laghi Kart of Castelletto track in Italy.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Leonardo_Gorski_WSK_Super_Master_Series_U10_Champion,_2023_on_the_podium_holding_the_winner%C2%B4s_trophy_at_7_Laghi_Kart_of_Castelletto_track_in_Italy.jpg",
+    "artist": "Racinglifestories",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "verbs:grow": {
+    "file": "/images/verbs/grow.jpg",
+    "title": "Adenium seedling 2day Uthandi Aug21 D72 20609-21 ZP.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Adenium_seedling_2day_Uthandi_Aug21_D72_20609-21_ZP.jpg",
+    "artist": "This Photo was taken by Timothy A. Gonsalves. Feel free to use my photos, but please mention me as the author. I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk page, for my information. Please contact me before commercial use. Please do not upload an edited image here without consulting me. I would like to make corrections only at my own source to ensure that the changes improve the image and are preserved.Otherwise you may upload an edited image with a new name. Please use one of the templates derivative or extract.",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:feed": {
+    "file": "/images/verbs/feed.jpg",
+    "title": "Water reflection of a boy feeding hay to a cow in a paddy field at golden hour in Laos.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Water_reflection_of_a_boy_feeding_hay_to_a_cow_in_a_paddy_field_at_golden_hour_in_Laos.jpg",
+    "artist": "Basile Morin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:pour": {
+    "file": "/images/verbs/pour.jpg",
+    "title": "A person is pouring white milk into a glass cup.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_person_is_pouring_white_milk_into_a_glass_cup.jpg",
+    "artist": "Shixart1985",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "verbs:boil": {
+    "file": "/images/verbs/boil.jpg",
+    "title": "Steam-boiling green asparagus.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Steam-boiling_green_asparagus.jpg",
+    "artist": "W.carter",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "verbs:mix": {
+    "file": "/images/verbs/mix.jpg",
+    "title": "Mixing ingredients with a wooden spoon in a blue bowl on a wooden table near jars of oats and other food items.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Mixing_ingredients_with_a_wooden_spoon_in_a_blue_bowl_on_a_wooden_table_near_jars_of_oats_and_other_food_items.jpg",
+    "artist": "Shixart1985",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "verbs:touch": {
+    "file": "/images/verbs/touch.jpg",
+    "title": "Team touching hands.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Team_touching_hands.jpg",
+    "artist": "Teak Sato",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "verbs:hold": {
+    "file": "/images/verbs/hold.jpg",
+    "title": "Left hand holding pen.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Left_hand_holding_pen.jpg",
+    "artist": "Magioladitis",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:tie": {
+    "file": "/images/verbs/tie.jpg",
+    "title": "Jonathan Brown tying shoelaces 2012.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Jonathan_Brown_tying_shoelaces_2012.jpg",
+    "artist": "Joshua Ryan",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "verbs:comb": {
+    "file": "/images/verbs/comb.jpg",
+    "title": "Plastic comb, 2015-06-07.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Plastic_comb,_2015-06-07.jpg",
+    "artist": "Crisco 1492",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:pray": {
+    "file": "/images/verbs/pray.jpg",
+    "title": "Namaste (5581496526).jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Namaste_(5581496526).jpg",
+    "artist": "Nico Crisafulli from USA",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "verbs:count": {
+    "file": "/images/verbs/count.jpg",
+    "title": "Chinese counting.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Chinese_counting.jpg",
+    "artist": "Aljosa21",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "verbs:build": {
+    "file": "/images/verbs/build.jpg",
+    "title": "Building Eugene Blosser house, Taiki, Japan.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Building_Eugene_Blosser_house,_Taiki,_Japan.jpg",
+    "artist": "Mennonite Church USA Archives",
+    "license": "No restrictions",
+    "licenseUrl": "https://www.flickr.com/commons/usage/"
+  },
+  "verbs:share": {
+    "file": "/images/verbs/share.jpg",
+    "title": "South Central Farm 1.jpg",
+    "mime": "image/jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:South_Central_Farm_1.jpg",
+    "artist": "Jonathan McIntosh",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
   }
 }

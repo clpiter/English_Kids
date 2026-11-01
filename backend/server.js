@@ -9,6 +9,7 @@ const { loadImageCredits } = require('./data/imageCredits');
 const { books } = require('./data/book');
 const wordsRouter = require('./routes/words');
 const profilesRouter = require('./routes/profiles');
+const adminRouter = require('./routes/admin');
 const { startHttps } = require('./https');
 
 const PORT = process.env.PORT || 5000;
@@ -30,7 +31,7 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', origin);
     res.setHeader('Vary', 'Origin');
     res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Device-Id, X-Claim');
     res.setHeader('Access-Control-Max-Age', '86400');
   }
   if (req.method === 'OPTIONS') return res.sendStatus(204);
@@ -40,6 +41,7 @@ app.use(express.json());
 
 app.use('/api/words', wordsRouter);
 app.use('/api/profiles', profilesRouter);
+app.use('/api/admin', adminRouter);
 app.get('/api/book', (req, res) => res.json({ books }));
 
 // Serve the built React app (npm run build in /frontend) in production
