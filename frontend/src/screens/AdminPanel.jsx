@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
 import api, { ADMIN_TOKEN } from '../api'
 import { useT } from '../useT'
+import BackButton from '../components/BackButton'
 import { ACTIVITIES } from '../activities/list'
 import { TENSES } from '../data/tenses'
 import { STRUCTURES } from '../data/structures'
@@ -111,35 +112,70 @@ export default function AdminPanel() {
 
   if (!token) {
     return (
-      <section className="screen narrow">
-        <form className="card admin-login" onSubmit={login}>
-          <div className="admin-lock">🔐</div>
-          <h1>{t('adminLogin')}</h1>
-          <label className="word-note-label">
-            {t('adminId')}
-            <input className="text-input" value={id} onChange={(e) => setId(e.target.value)} autoComplete="username" required />
-          </label>
-          <label className="word-note-label">
-            {t('adminPassword')}
-            <span className="password-row">
-              <input
-                className="text-input"
-                type={show ? 'text' : 'password'}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                autoComplete="current-password"
-                required
-              />
-              <button type="button" className="icon-btn" onClick={() => setShow(!show)} aria-label={show ? 'Hide password' : 'Show password'}>
-                {show ? '🙈' : '👁️'}
-              </button>
-            </span>
-          </label>
-          {error && <p className="error-text">{error}</p>}
-          <button className="btn btn-primary big" disabled={busy}>
-            {busy ? '…' : <>🔓 {t('adminLoginBtn')}</>}
-          </button>
-        </form>
+      <section className="admin-login-page">
+        <div className="admin-login-box">
+          <div className="admin-login-side" aria-hidden="true">
+            <div className="admin-login-art">🛡️</div>
+            <h2>{t('adminTitle')}</h2>
+            <p>{t('adminLoginIntro')}</p>
+            <ul>
+              <li>📖 {t('adminReading')}</li>
+              <li>🎮 {t('adminActivities')}</li>
+              <li>📐 {t('adminGrammar')}</li>
+              <li>📕 {t('adminBooks')}</li>
+            </ul>
+          </div>
+
+          <form className="admin-login" onSubmit={login} noValidate>
+            <div className="admin-lock">🔐</div>
+            <h1>{t('adminLogin')}</h1>
+            <p className="muted">{t('adminLoginHint')}</p>
+
+            <label className="admin-field">
+              <span>{t('adminId')}</span>
+              <span className="admin-input">
+                <span className="admin-input-icon" aria-hidden="true">👤</span>
+                <input
+                  value={id}
+                  onChange={(e) => setId(e.target.value)}
+                  autoComplete="username"
+                  autoCapitalize="none"
+                  spellCheck="false"
+                  autoFocus
+                  required
+                />
+              </span>
+            </label>
+
+            <label className="admin-field">
+              <span>{t('adminPassword')}</span>
+              <span className="admin-input">
+                <span className="admin-input-icon" aria-hidden="true">🔑</span>
+                <input
+                  type={show ? 'text' : 'password'}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  autoComplete="current-password"
+                  required
+                />
+                <button type="button" className="admin-eye" onClick={() => setShow(!show)} aria-label={show ? 'Hide password' : 'Show password'}>
+                  {show ? '🙈' : '👁️'}
+                </button>
+              </span>
+            </label>
+
+            {error && (
+              <p className="admin-error" role="alert">
+                ⚠️ {error}
+              </p>
+            )}
+
+            <button className="btn btn-primary admin-submit" disabled={busy || !id.trim() || !password}>
+              {busy ? <span className="admin-spinner" aria-label="…" /> : <>🔓 {t('adminLoginBtn')}</>}
+            </button>
+            <BackButton screen="profiles" />
+          </form>
+        </div>
       </section>
     )
   }

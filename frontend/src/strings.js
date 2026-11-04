@@ -117,6 +117,11 @@ export const STRINGS = {
   },
   adminLogin: { en: 'Admin login', hi: 'एडमिन लॉगिन' },
   adminId: { en: 'ID', hi: 'आईडी' },
+  adminLoginIntro: {
+    en: "See every child's reading, games, grammar and book progress in one place.",
+    hi: 'हर बच्चे की पढ़ाई, खेल, व्याकरण और किताब की प्रगति एक जगह देखें।',
+  },
+  adminLoginHint: { en: 'For parents and teachers only', hi: 'केवल माता-पिता और शिक्षकों के लिए' },
   adminPassword: { en: 'Password', hi: 'पासवर्ड' },
   adminLoginBtn: { en: 'Log in', hi: 'लॉगिन करो' },
   adminServerError: { en: 'Could not reach the server. Please try again.', hi: 'सर्वर से संपर्क नहीं हो सका। फिर से कोशिश कीजिए।' },
