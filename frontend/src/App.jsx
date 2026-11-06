@@ -26,6 +26,8 @@ const AdminPanel = lazy(() => import('./screens/AdminPanel'))
 const Grammar = lazy(() => import('./screens/Grammar'))
 const StructureLesson = lazy(() => import('./screens/StructureLesson'))
 const StructurePractice = lazy(() => import('./screens/StructurePractice'))
+const PrepositionLesson = lazy(() => import('./screens/PrepositionLesson'))
+const PrepPractice = (props) => <StructurePractice {...props} kind="prep" />
 import { fetchWords } from './store/wordsSlice'
 import { fetchProfiles, selectCurrentProfile } from './store/profileSlice'
 import { useT } from './useT'
@@ -98,6 +100,8 @@ function AppRoutes() {
       <Route path="/grammar" element={book(Grammar)} />
       <Route path="/grammar/:structure" element={book(StructureLesson)} />
       <Route path="/grammar/:structure/practice" element={book(StructurePractice)} />
+      <Route path="/preposition/:prep" element={book(PrepositionLesson)} />
+      <Route path="/preposition/:prep/practice" element={book(PrepPractice)} />
       <Route path="/tense" element={book(Tenses)} />
       <Route path="/tense/:tense" element={book(TenseLesson)} />
       <Route path="/tense/:tense/practice" element={book(TensePractice)} />

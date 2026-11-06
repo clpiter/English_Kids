@@ -218,12 +218,12 @@ router.post('/:id/lessons', async (req, res) => {
   res.json(profile);
 });
 
-// A finished grammar game: { key: "tense-past-simple" | "gram-can" | "tense-mix" | "gram-mix", correct, total }
+// A finished grammar game: { key: "tense-past-simple" | "gram-can" | "prep-under" | "...-mix", correct, total }
 router.post('/:id/grammar', async (req, res) => {
   const { key } = req.body;
   const correct = Math.max(0, Math.floor(Number(req.body.correct) || 0));
   const total = Math.max(0, Math.floor(Number(req.body.total) || 0));
-  if (typeof key !== 'string' || !/^(tense|gram)-[a-z0-9-]{2,40}$/.test(key) || !total || correct > total) {
+  if (typeof key !== 'string' || !/^(tense|gram|prep)-[a-z0-9-]{1,40}$/.test(key) || !total || correct > total) {
     return res.status(400).json({ message: 'key, correct and total are required' });
   }
   const profile = await findProfile(req.params.id);

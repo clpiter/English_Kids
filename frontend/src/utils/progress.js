@@ -1,6 +1,7 @@
 // Grammar and book progress of one profile (used by the Progress tab and the admin panel)
 import { TENSES } from '../data/tenses'
 import { STRUCTURES } from '../data/structures'
+import { PREPOSITIONS } from '../data/prepositions'
 
 const scoreOf = (profile, key) => profile.grammarScores?.[key] || null
 
@@ -13,8 +14,9 @@ export function grammarProgress(profile) {
   }
   const tenses = TENSES.map((x) => row(`tense-${x.id}`, x, x.time))
   const structures = STRUCTURES.map((x) => row(`gram-${x.id}`, x, x.level))
-  const mix = ['tense-mix', 'gram-mix'].map((key) => ({ key, ...(scoreOf(profile, key) || { played: 0, best: null }) }))
-  const all = [...tenses, ...structures]
+  const preps = PREPOSITIONS.map((x) => row(`prep-${x.id}`, x, x.group))
+  const mix = ['tense-mix', 'gram-mix', 'prep-mix'].map((key) => ({ key, ...(scoreOf(profile, key) || { played: 0, best: null }) }))
+  const all = [...tenses, ...structures, ...preps]
   const scored = Object.values(profile.grammarScores || {})
   return {
     tenses,
@@ -22,6 +24,8 @@ export function grammarProgress(profile) {
     mix,
     tensesDone: tenses.filter((x) => x.done).length,
     structuresDone: structures.filter((x) => x.done).length,
+    preps,
+    prepsDone: preps.filter((x) => x.done).length,
     played: scored.reduce((n, s) => n + (s.played || 0), 0),
     correct: scored.reduce((n, s) => n + (s.correct || 0), 0),
     total: scored.reduce((n, s) => n + (s.total || 0), 0),

@@ -4,6 +4,7 @@ import { useT } from '../useT'
 import ProgressBar from '../components/ProgressBar'
 import { LEVELS } from '../data/structures'
 import { TIMES } from '../data/tenses'
+import { PREP_GROUPS } from '../data/prepositions'
 import { bookProgress, grammarProgress } from '../utils/progress'
 
 const pct = (a, b) => (b ? Math.round((a / b) * 100) : 0)
@@ -45,6 +46,10 @@ export function GrammarProgress({ profile }) {
         <div className="stat card">
           <span className="stat-num">🧱 {g.structuresDone}/{g.structures.length}</span>
           <span>{t('progStructuresLearned')}</span>
+        </div>
+        <div className="stat card">
+          <span className="stat-num">🧲 {g.prepsDone}/{g.preps.length}</span>
+          <span>{t('progPrepsLearned')}</span>
         </div>
         <div className="stat card">
           <span className="stat-num">🎮 {g.played}</span>
@@ -92,10 +97,27 @@ export function GrammarProgress({ profile }) {
       </div>
 
       <div className="card">
+        <h3>🧲 {t('prepTitle')}</h3>
+        <ProgressBar value={g.prepsDone} max={g.preps.length} color="#00838f" />
+        {PREP_GROUPS.map((pg) => (
+          <div key={pg.id}>
+            <h4 className="progress-sub">
+              {pg.icon} {bi(pg.hi, pg.en)}
+            </h4>
+            {g.preps
+              .filter((r) => r.group === pg.id)
+              .map((r) => (
+                <ScoreRow key={r.key} row={r} label={r.formula} sub={r.hi} onOpen={() => nav(go({ screen: 'preposition', params: { prep: r.id } }))} />
+              ))}
+          </div>
+        ))}
+      </div>
+
+      <div className="card">
         <h3>🎮 {t('progMixGames')}</h3>
         {g.mix.map((m) => (
           <p key={m.key}>
-            <b>{m.key === 'tense-mix' ? t('tenseMixQuiz') : t('gramAllGames')}:</b>{' '}
+            <b>{m.key === 'tense-mix' ? t('tenseMixQuiz') : m.key === 'prep-mix' ? t('prepAllGames') : t('gramAllGames')}:</b>{' '}
             {m.played ? `🎮 ${m.played} · 🏆 ${m.best}%` : <span className="muted">{t('notPlayed')}</span>}
           </p>
         ))}

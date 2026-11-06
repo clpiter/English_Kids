@@ -34,6 +34,8 @@ const PATHS = {
   grammar: () => '/grammar',
   structure: (p) => `/grammar/${p.structure}`,
   structurePractice: (p) => `/grammar/${p.structure}/practice${p.mode ? `?mode=${p.mode}` : ''}`,
+  preposition: (p) => `/preposition/${p.prep}`,
+  prepPractice: (p) => `/preposition/${p.prep}/practice${p.mode ? `?mode=${p.mode}` : ''}`,
   tenses: () => '/tense',
   tense: (p) => `/tense/${p.tense}`,
   tensePractice: (p) => `/tense/${p.tense}/practice${p.mode ? `?mode=${p.mode}` : ''}`,

@@ -8,8 +8,44 @@ import ProgressBar from '../components/ProgressBar'
 import Sparkles from '../components/Sparkles'
 import Confetti from '../components/Confetti'
 import { STRUCTURES, structureById } from '../data/structures'
-import { STRUCTURE_QUIZ, structureActivity } from '../data/structureActivities'
+import { PREP_QUIZ, STRUCTURE_QUIZ, prepActivity, structureActivity } from '../data/structureActivities'
+import { PREPOSITIONS, prepById, prepWrongKeys } from '../data/prepositions'
 import { keyOf, sentenceOf, wrongKeys } from '../utils/grammar'
+
+// the two kinds of grammar items these games work with
+const SETS = {
+  structure: {
+    items: STRUCTURES,
+    byId: structureById,
+    key: keyOf,
+    wrongs: (st, ex) => shuffle(wrongKeys(st, ex)),
+    activity: structureActivity,
+    quiz: STRUCTURE_QUIZ,
+    param: 'structure',
+    lesson: 'structure',
+    prefix: 'gram',
+    icon: '🧱',
+    allLabel: 'gramAllStructures',
+  },
+  prep: {
+    items: PREPOSITIONS,
+    byId: prepById,
+    key: (p) => p.word,
+    // the usual mix-ups first (in random order), then other prepositions
+    wrongs: (p) => {
+      const list = prepWrongKeys(p)
+      return [...shuffle(list.slice(0, 3)), ...list.slice(3)]
+    },
+    activity: prepActivity,
+    quiz: PREP_QUIZ,
+    param: 'prep',
+    lesson: 'preposition',
+    prefix: 'prep',
+    icon: '🧲',
+    allLabel: 'prepAll',
+    prompts: { fill: 'prepQFill', type: 'prepQType', mistake: 'prepQMistake', which: 'prepQWhich' },
+  },
+}
 import { sameAnswer } from '../utils/tense'
 import { playCorrect, playWin, playWrong } from '../utils/sounds'
 import { speak, speakEn } from '../utils/speech'
@@ -34,10 +70,10 @@ function optionsOf(right, wrongs) {
   return shuffle(out).map((text) => ({ text, correct: text === right }))
 }
 
-function makeQuestion(kind, st, ex, mix) {
-  const key = keyOf(st, ex)
-  const right = sentenceOf(st, ex)
-  const wrongs = shuffle(wrongKeys(st, ex))
+function makeQuestion(set, kind, st, ex, mix) {
+  const key = set.key(st, ex)
+  const right = sentenceOf(st, ex, key)
+  const wrongs = set.wrongs(st, ex)
   const base = { kind, st, ex, answer: right }
   switch (kind) {
     case 'fill':
@@ -63,12 +99,17 @@ function makeQuestion(kind, st, ex, mix) {
     case 'mistake':
       return { ...base, prompt: sentenceOf(st, ex, wrongs[0]), hi: ex.hi, options: optionsOf(key, wrongs.slice(1).concat(wrongs[0])) }
     case 'which': {
-      const others = shuffle(STRUCTURES.filter((x) => x.id !== st.id)).map((x) => x.formula)
+      const others = shuffle(set.items.filter((x) => x.id !== st.id)).map((x) => x.formula)
       return { ...base, prompt: right, hi: ex.hi, options: optionsOf(st.formula, others) }
     }
+    case 'meaning': {
+      // preposition -> its Hindi meaning
+      const others = shuffle(set.items.filter((x) => x.id !== st.id)).map((x) => x.hi)
+      return { ...base, prompt: st.word, answer: `${st.word} = ${st.hi}`, options: optionsOf(st.hi, others) }
+    }
     case 'match': {
-      const pool = mix ? shuffle(STRUCTURES).slice(0, 4).map((x) => ({ st: x, ex: pickOne(x.examples) })) : shuffle(st.examples).slice(0, 4).map((e) => ({ st, ex: e }))
-      const pairs = pool.map((p, i) => ({ id: i, en: sentenceOf(p.st, p.ex), hi: p.ex.hi }))
+      const pool = mix ? shuffle(set.items).slice(0, 4).map((x) => ({ st: x, ex: pickOne(x.examples) })) : shuffle(st.examples).slice(0, 4).map((e) => ({ st, ex: e }))
+      const pairs = pool.map((p, i) => ({ id: i, en: sentenceOf(p.st, p.ex, set.key(p.st, p.ex)), hi: p.ex.hi }))
       return { ...base, pairs, right: shuffle(pairs.map((p) => p.id)) }
     }
     default: {
@@ -78,17 +119,17 @@ function makeQuestion(kind, st, ex, mix) {
   }
 }
 
-function buildQuiz(id, mode) {
+function buildQuiz(set, id, mode) {
   const mix = id === 'mix'
-  const activity = structureActivity(mode)
-  const single = structureById(id)
+  const activity = set.activity(mode)
+  const single = set.byId(id)
   if (!mix && !single) return []
   const count = activity.id === 'match' ? 3 : mix ? 10 : 8
-  const kinds = activity.kinds ? Array.from({ length: count }, () => activity.kinds[0]) : STRUCTURE_QUIZ[mix ? 'mix' : 'single']
+  const kinds = activity.kinds ? Array.from({ length: count }, () => activity.kinds[0]) : set.quiz[mix ? 'mix' : 'single']
   const exs = single ? shuffle(single.examples) : []
   return kinds.map((kind, i) => {
-    const st = mix ? pickOne(STRUCTURES) : single
-    return makeQuestion(kind, st, mix ? pickOne(st.examples) : exs[i % exs.length], mix)
+    const st = mix ? pickOne(set.items) : single
+    return makeQuestion(set, kind, st, mix ? pickOne(st.examples) : exs[i % exs.length], mix)
   })
 }
 
@@ -100,20 +141,23 @@ const PROMPTS = {
   truefalse: 'tenseQTrue',
   mistake: 'gramQMistake',
   which: 'gramQWhich',
+  meaning: 'prepQMeaning',
   match: 'tenseQMatch',
   order: 'tenseQOrder',
 }
 
 // One game for a sentence structure (/grammar/:structure/practice?mode=fill) or all of them ("mix")
-export default function StructurePractice({ params, profile }) {
+// One game for a structure or a preposition (kind = 'structure' | 'prep'); id "mix" = all of them
+export default function StructurePractice({ params, profile, kind = 'structure' }) {
+  const set = SETS[kind]
   const dispatch = useDispatch()
   const nav = useNav()
   const { t, bi } = useT()
   useAnnounce(VOICE.tensePractice)
-  const id = params.structure
-  const activity = structureActivity(params.mode)
+  const id = params[set.param]
+  const activity = set.activity(params.mode)
   const [round, setRound] = useState(0)
-  const [questions, setQuestions] = useState(() => buildQuiz(id, activity.id))
+  const [questions, setQuestions] = useState(() => buildQuiz(set, id, activity.id))
   const [index, setIndex] = useState(0)
   const [answers, setAnswers] = useState({})
   const [picked, setPicked] = useState([])
@@ -141,7 +185,7 @@ export default function StructurePractice({ params, profile }) {
     if (Object.keys(next).length === questions.length) {
       const got = Object.values(next).filter((a) => a.correct).length
       setTimeout(playWin, 900)
-      dispatch(saveGrammar({ id: profile._id, key: `gram-${id}`, correct: got, total: questions.length }))
+      dispatch(saveGrammar({ id: profile._id, key: `${set.prefix}-${id}`, correct: got, total: questions.length }))
     }
   }
 
@@ -189,15 +233,15 @@ export default function StructurePractice({ params, profile }) {
   }
 
   const again = () => {
-    setQuestions(buildQuiz(id, activity.id))
+    setQuestions(buildQuiz(set, id, activity.id))
     setRound(round + 1)
     setAnswers({})
     goTo(0)
   }
 
-  const single = structureById(id)
-  const backScreen = id === 'mix' ? { screen: 'grammar' } : { screen: 'structure', params: { structure: id } }
-  const where = id === 'mix' ? t('gramAllStructures') : single?.formula || ''
+  const single = set.byId(id)
+  const backScreen = id === 'mix' ? { screen: 'grammar' } : { screen: set.lesson, params: { [set.param]: id } }
+  const where = id === 'mix' ? t(set.allLabel) : single ? (single.word ? `${single.word} = ${single.hi}` : single.formula) : ''
 
   if (finished && index === questions.length) {
     const good = score / questions.length >= 0.7
@@ -228,7 +272,7 @@ export default function StructurePractice({ params, profile }) {
   }
 
   if (!q) return <p className="center muted">{t('notEnough')}</p>
-  const englishPrompt = ['fill', 'type', 'truefalse', 'mistake', 'which'].includes(q.kind)
+  const englishPrompt = ['fill', 'type', 'truefalse', 'mistake', 'which', 'meaning'].includes(q.kind)
 
   return (
     <section className="screen narrow" key={round}>
@@ -238,7 +282,7 @@ export default function StructurePractice({ params, profile }) {
           <span>{activity.icon}</span> {bi(activity.hi, activity.en)}
         </h2>
       </div>
-      <p className="muted center">🧱 {where}</p>
+      <p className="muted center">{set.icon} {where}</p>
       <div className="quiz">
         <div className="quiz-progress">
           <span>
@@ -248,7 +292,7 @@ export default function StructurePractice({ params, profile }) {
           <span>⭐ {score}</span>
         </div>
 
-        <p className="quiz-question">{t(PROMPTS[q.kind])}</p>
+        <p className="quiz-question">{t(set.prompts?.[q.kind] || PROMPTS[q.kind])}</p>
 
         {q.kind !== 'match' && (
           <div className="quiz-prompt pop-in tense-prompt" key={index}>
@@ -374,7 +418,9 @@ export default function StructurePractice({ params, profile }) {
                 {q.ex.hi}
               </span>
             )}
-            <span className="muted">🧱 {q.st.formula}</span>
+            <span className="muted">
+              {set.icon} {q.st.word ? `${q.st.word} = ${q.st.hi}` : q.st.formula}
+            </span>
             <button className="btn btn-primary" onClick={() => goTo(index + 1)}>
               {index + 1 < questions.length ? <>{t('next')} ▶</> : <>🏁 {t('tenseSeeScore')}</>}
             </button>

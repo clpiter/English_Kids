@@ -98,6 +98,7 @@ function Overview({ profile }) {
         <Stat icon="📕" value={`${bp.reduce((n, b) => n + b.done, 0)}/${bp.reduce((n, b) => n + b.total, 0)}`} label={t('progBookLessons')} />
         <Stat icon="⏰" value={`${g.tensesDone}/${g.tenses.length}`} label={t('progTensesLearned')} />
         <Stat icon="🧱" value={`${g.structuresDone}/${g.structures.length}`} label={t('progStructuresLearned')} />
+        <Stat icon="🧲" value={`${g.prepsDone}/${g.preps.length}`} label={t('progPrepsLearned')} />
       </div>
 
       <div className="progress-layout">

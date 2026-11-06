@@ -2957,6 +2957,88 @@ h3 {
   --panel: #a84300; /* dark orange */
 }
 
+.gs-prep {
+  --panel: #004d40; /* dark teal */
+}
+
+.prep-intro {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 18px;
+  padding: 12px 16px;
+  margin: 6px 0 12px;
+}
+
+.prep-intro h3 {
+  margin: 0 0 6px;
+}
+
+.prep-intro p {
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+
+.prep-intro-examples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.prep-intro-ex {
+  display: grid;
+  gap: 4px;
+  text-align: left;
+  background: var(--card);
+  color: var(--text);
+  border-radius: 14px;
+  padding: 10px 12px;
+  font-weight: 700;
+}
+
+.prep-intro-label {
+  color: #00838f;
+  font-weight: 800;
+}
+
+.prep-intro-tip {
+  font-weight: 700;
+}
+
+.gs-intro {
+  margin: 0 0 6px;
+  opacity: 0.9;
+}
+
+.prep-grid {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.prep-card-word {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--c);
+}
+
+.prep-head {
+  border-top: 6px solid #00838f;
+  text-align: center;
+}
+
+.prep-word {
+  background: none;
+  font-size: clamp(2.2rem, 9vw, 3.2rem);
+  font-weight: 800;
+  color: #00838f;
+}
+
+.prep-meaning {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--hi);
+  margin-bottom: 8px;
+}
+
 .gs-hard {
   --panel: #8e1b1b; /* dark red */
 }

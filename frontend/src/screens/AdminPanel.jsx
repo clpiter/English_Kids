@@ -6,6 +6,7 @@ import BackButton from '../components/BackButton'
 import { ACTIVITIES } from '../activities/list'
 import { TENSES } from '../data/tenses'
 import { STRUCTURES } from '../data/structures'
+import { PREPOSITIONS } from '../data/prepositions'
 import { bookProgress, grammarProgress } from '../utils/progress'
 
 const readToken = () => {
@@ -39,7 +40,7 @@ function summary(p, bookLessons) {
   const lessons = done.filter((id) => !id.startsWith('tense-') && !id.startsWith('gram-')).length
   const g = grammarProgress(p)
   const last = p.lastPlayed || p.updatedAt
-  return { played, correct, total, lessons, books, grammar: g.tensesDone + g.structuresDone, grammarGames: g.played, last }
+  return { played, correct, total, lessons, books, grammar: g.tensesDone + g.structuresDone + g.prepsDone, grammarGames: g.played, last }
 }
 
 // Admin panel (/admin): log in, then see every kid's reading and activity details
@@ -277,7 +278,7 @@ function AdminDashboard({ profiles, openId, setOpenId, query, setQuery, onDelete
                 <td>{p.learned?.length || 0}</td>
                 <td>{s.books}</td>
                 <td>
-                  {s.grammar}/{TENSES.length + STRUCTURES.length}{s.grammarGames ? ` · 🎮${s.grammarGames}` : ''}
+                  {s.grammar}/{TENSES.length + STRUCTURES.length + PREPOSITIONS.length}{s.grammarGames ? ` · 🎮${s.grammarGames}` : ''}
                 </td>
                 <td>{s.played}</td>
                 <td>{pct(s.correct, s.total)}</td>
@@ -443,14 +444,14 @@ function AdminGrammar({ profile }) {
   const { t } = useT()
   const g = grammarProgress(profile)
   const line = (r, name) => (r.played ? `${r.done ? '✅' : '🟡'} ${name}: 🎮${r.played} · 🏆${r.best}% · last ${r.last}%` : null)
-  const lines = [...g.tenses.map((r) => line(r, r.en)), ...g.structures.map((r) => line(r, r.formula))].filter(Boolean)
+  const lines = [...g.tenses.map((r) => line(r, r.en)), ...g.structures.map((r) => line(r, r.formula)), ...g.preps.map((r) => line(r, r.formula))].filter(Boolean)
   const mix = g.mix.filter((m) => m.played)
   return (
     <div className="card">
       <h3>📐 {t('adminGrammar')}</h3>
       <p>
         ⏰ {t('progTensesLearned')}: <b>{g.tensesDone}/{g.tenses.length}</b> · 🧱 {t('progStructuresLearned')}:{' '}
-        <b>{g.structuresDone}/{g.structures.length}</b> · 🎮 {g.played} · ✅ {g.total ? Math.round((g.correct / g.total) * 100) : 0}%
+        <b>{g.structuresDone}/{g.structures.length}</b> · 🧲 {t('progPrepsLearned')}: <b>{g.prepsDone}/{g.preps.length}</b> · 🎮 {g.played} · ✅ {g.total ? Math.round((g.correct / g.total) * 100) : 0}%
       </p>
       {lines.length === 0 && mix.length === 0 && <p className="muted">{t('adminNone')}</p>}
       {lines.length > 0 && (
@@ -462,7 +463,7 @@ function AdminGrammar({ profile }) {
       )}
       {mix.length > 0 && (
         <p className="muted">
-          {mix.map((m) => `${m.key === 'tense-mix' ? t('tenseMixQuiz') : t('gramAllGames')}: 🎮${m.played} · 🏆${m.best}%`).join(' · ')}
+          {mix.map((m) => `${m.key === 'tense-mix' ? t('tenseMixQuiz') : m.key === 'prep-mix' ? t('prepAllGames') : t('gramAllGames')}: 🎮${m.played} · 🏆${m.best}%`).join(' · ')}
         </p>
       )}
     </div>
