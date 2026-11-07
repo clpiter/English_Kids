@@ -313,6 +313,15 @@ export const STRINGS = {
   addDifficult: { en: 'Add to My words', hi: 'मेरे शब्दों में जोड़ो' },
   inDifficult: { en: 'In My words', hi: 'मेरे शब्दों में है' },
   myWords: { en: 'My difficult words', hi: 'मेरे मुश्किल शब्द' },
+  myWordsLearn: { en: 'Learn tab: stories and topics', hi: 'सीखो टैब: कहानियाँ और विषय' },
+  myWordsOther: { en: 'Other words', hi: 'बाकी शब्द' },
+  openLesson: { en: 'Open this lesson', hi: 'यह पाठ खोलो' },
+  myWordsGames: { en: 'Games with my words', hi: 'मेरे शब्दों के खेल' },
+  myWordsGamesHint: {
+    en: 'Every game uses only the words you chose. Picture games use the words that have a picture.',
+    hi: 'हर खेल में सिर्फ़ तुम्हारे चुने हुए शब्द आते हैं। चित्र वाले खेलों में चित्र वाले शब्द आते हैं।',
+  },
+  myWordsNeedMore: { en: 'Choose more words', hi: 'और शब्द चुनो' },
   myWordsIntro: {
     en: 'Words you chose as difficult. Tap 🔊 to hear them again and again.',
     hi: 'वे शब्द जो तुमने मुश्किल चुने। 🔊 दबाकर बार-बार सुनो।',

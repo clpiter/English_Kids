@@ -32,7 +32,7 @@ export const submitResults = createAsyncThunk(
 // (key = word key, or "g:<word>" for everyday / book words)
 export const setDifficult = createAsyncThunk(
   'profiles/difficult',
-  async ({ id, key, keys, on }) => (await api.post(`/profiles/${id}/difficult`, { keys: keys || [key], on })).data,
+  async ({ id, key, keys, on, lesson }) => (await api.post(`/profiles/${id}/difficult`, { keys: keys || [key], on, lesson })).data,
 )
 
 // Words the kid could not read aloud in a lesson -> "Say the word" practice
@@ -44,7 +44,7 @@ export const addMissed = createAsyncThunk(
 // Save a word to "My words" with its meaning and the kid's own sentence: { id, key, en, hi, sentence }
 export const saveWord = createAsyncThunk(
   'profiles/saveWord',
-  async ({ id, key, en, hi, sentence }) => (await api.post(`/profiles/${id}/words`, { key, en, hi, sentence })).data,
+  async ({ id, key, en, hi, sentence, lesson }) => (await api.post(`/profiles/${id}/words`, { key, en, hi, sentence, lesson })).data,
 )
 
 // A finished grammar game: { id, key: "tense-<id>" | "gram-<id>" | "tense-mix" | "gram-mix", correct, total }
@@ -131,20 +131,25 @@ const profileSlice = createSlice({
       .addCase(addMissed.fulfilled, upsert)
       .addCase(setDifficult.pending, (state, action) => {
         // show the change right away
-        const { id, key, keys = [key], on } = action.meta.arg
+        const { id, key, keys = [key], on, lesson } = action.meta.arg
         const p = state.list.find((x) => x._id === id)
         if (!p) return
         p.difficult = (p.difficult || []).filter((k) => !keys.includes(k))
-        if (on !== false) p.difficult.push(...keys)
+        if (on !== false) {
+          p.difficult.push(...keys)
+          const have = new Set((p.wordNotes || []).map((n) => n.key))
+          if (lesson) p.wordNotes = [...(p.wordNotes || []), ...keys.filter((k) => !have.has(k)).map((k) => ({ key: k, en: '', hi: '', sentence: '', lesson }))]
+        }
         else p.wordNotes = (p.wordNotes || []).filter((n) => !keys.includes(n.key))
       })
       .addCase(setDifficult.fulfilled, upsert)
       .addCase(saveWord.pending, (state, action) => {
-        const { id, key, en, hi, sentence } = action.meta.arg
+        const { id, key, en, hi, sentence, lesson } = action.meta.arg
         const p = state.list.find((x) => x._id === id)
         if (!p) return
         if (!(p.difficult || []).includes(key)) p.difficult = [...(p.difficult || []), key]
-        p.wordNotes = [...(p.wordNotes || []).filter((n) => n.key !== key), { key, en, hi, sentence, date: new Date().toISOString() }]
+        const old = (p.wordNotes || []).find((n) => n.key === key)
+        p.wordNotes = [...(p.wordNotes || []).filter((n) => n.key !== key), { key, en, hi, sentence, lesson: lesson || old?.lesson || '', date: new Date().toISOString() }]
       })
       .addCase(saveWord.fulfilled, upsert)
       .addCase(deleteProfile.fulfilled, (state, action) => {

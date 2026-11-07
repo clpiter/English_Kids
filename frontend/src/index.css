@@ -1734,18 +1734,12 @@ h3 {
   border-bottom-style: none;
 }
 
-/* a word saved in My words: its own colour, a small star, wherever it is in a lesson */
+/* a word saved in My words: its own colour wherever it is in a lesson */
 .rw.rw-mine {
   color: #7b1fa2;
   font-weight: 800;
   background: #f3e5f5;
   border-bottom: 3px solid #ba68c8;
-}
-.rw.rw-mine::after {
-  content: '⭐';
-  font-size: 0.55em;
-  vertical-align: super;
-  margin-left: 1px;
 }
 :root[data-theme='dark'] .rw.rw-mine {
   color: #f3c8ff;
@@ -4334,4 +4328,79 @@ h3 {
   .progress-row {
     grid-template-columns: 30px 1fr 70px 44px;
   }
+}
+
+/* My words: one dark panel per class (book), lesson names inside; tap a lesson to see its words */
+.dw-group {
+  --panel: #37474f;
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 20px;
+  background: linear-gradient(160deg, var(--panel), color-mix(in srgb, var(--panel) 65%, #000));
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+.dw-santoor { --panel: #6a1b9a; } /* Class 3: purple */
+.dw-class6 { --panel: #0d47a1; } /* Class 6: blue */
+.dw-class7 { --panel: #1b5e20; } /* Class 7: green */
+.dw-class8 { --panel: #a84300; } /* Class 8: orange-brown */
+.dw-learn { --panel: #004d40; } /* Learn tab: teal */
+.dw-other { --panel: #4e342e; } /* other words: brown */
+
+.dw-group-title {
+  margin: 0 0 10px;
+  font-size: 1.3rem;
+  color: #fff;
+}
+.dw-lesson {
+  margin-top: 8px;
+}
+.dw-lesson-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+.dw-lesson-title::-webkit-details-marker {
+  display: none;
+}
+.dw-lesson-title::before {
+  content: '▶';
+  font-size: 0.75rem;
+  transition: transform 0.2s;
+}
+.dw-lesson[open] > .dw-lesson-title::before {
+  transform: rotate(90deg);
+}
+.dw-lesson-title:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.dw-lesson-name {
+  flex: 1;
+  min-width: 0;
+}
+.dw-lesson[open] > .dw-list {
+  margin: 10px 0 4px;
+}
+.dw-count {
+  display: inline-block;
+  min-width: 1.7em;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: color-mix(in srgb, var(--panel) 80%, #000);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-align: center;
+}
+.dw-open {
+  margin: 8px 0 0;
+  font-size: 0.9rem;
 }

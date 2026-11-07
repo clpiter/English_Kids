@@ -87,6 +87,8 @@ const profileSchema = new mongoose.Schema(
           en: { type: String, maxlength: 60, default: '' },
           hi: { type: String, maxlength: 200, default: '' },
           sentence: { type: String, maxlength: 300, default: '' },
+          // the lesson the word was saved from (book or story lesson id), for grouping My words
+          lesson: { type: String, maxlength: 60, default: '' },
           date: { type: Date, default: Date.now },
         },
       ],

@@ -91,6 +91,20 @@ export function wordFromKey(key, words, glossary) {
   return { key, en, hi: g?.[0] || '', say: g?.[1] || '', emoji: '', image: '', category: 'missed', book: true }
 }
 
+// Every word in "My words" as game words (book words too), with the kid's own meaning if they wrote one.
+// Without a Hindi meaning a word can only be practised aloud, so `needMeaning` leaves those out.
+export function myWordsPool(profile, words, glossary, needMeaning = true) {
+  const notes = new Map((profile?.wordNotes || []).map((n) => [n.key, n]))
+  return (profile?.difficult || [])
+    .map((k) => {
+      const w = wordFromKey(k, words, glossary)
+      const n = notes.get(k)
+      if (!w) return null
+      return { ...w, ...(n?.hi ? { hi: n.hi } : {}), ...(w.book ? { category: 'difficult' } : {}) }
+    })
+    .filter((w) => w && (!needMeaning || w.hi))
+}
+
 // "My words" key -> { key, en, hi, say, word? }
 export function resolveDifficult(key, words, glossary) {
   if (key.startsWith('g:')) {

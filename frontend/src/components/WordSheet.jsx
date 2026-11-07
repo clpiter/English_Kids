@@ -8,8 +8,8 @@ import { speak, speakEn, speakHi } from '../utils/speech'
 
 // Bottom sheet that explains a tapped word: picture, pronunciation, Hindi meaning, voice,
 // and a form to keep it in "My words" with a meaning and the kid's own sentence
-// `silent`: the sound was already played by the tap that opened it
-export default function WordSheet({ text, entry, onClose, silent = false }) {
+// `silent`: the sound was already played by the tap that opened it; `lesson`: the lesson it was opened in
+export default function WordSheet({ text, entry, onClose, silent = false, lesson }) {
   const dispatch = useDispatch()
   const profile = useSelector(selectCurrentProfile)
   const { t } = useT()
@@ -22,10 +22,10 @@ export default function WordSheet({ text, entry, onClose, silent = false }) {
   const [meaning, setMeaning] = useState(note?.hi || info?.hi || '')
   const [sentence, setSentence] = useState(note?.sentence || '')
   const [justSaved, setJustSaved] = useState(false)
-  const changed = !saved || meaning.trim() !== (note?.hi ?? info?.hi ?? '') || sentence.trim() !== (note?.sentence || '')
+  const changed = !saved || meaning.trim() !== (note?.hi || info?.hi || '') || sentence.trim() !== (note?.sentence || '')
 
   const save = () => {
-    dispatch(saveWord({ id: profile._id, key, en, hi: meaning.trim(), sentence: sentence.trim() }))
+    dispatch(saveWord({ id: profile._id, key, en, hi: meaning.trim(), sentence: sentence.trim(), lesson }))
     setJustSaved(true)
   }
 

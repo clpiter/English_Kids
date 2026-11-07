@@ -175,21 +175,31 @@ router.post('/:id/difficult', async (req, res) => {
     req.body.on === false
       ? { $pullAll: { difficult: keys }, $pull: { wordNotes: { key: { $in: keys } } } }
       : { $addToSet: { difficult: { $each: keys } } };
+  // words chosen in a lesson: remember that lesson for words that have no note yet
+  const lesson = typeof req.body.lesson === 'string' ? req.body.lesson.slice(0, 60) : '';
+  if (req.body.on !== false && lesson) {
+    const before = await Profile.findById(req.params.id).select('wordNotes.key');
+    if (!before) return res.status(404).json({ message: 'Profile not found' });
+    const have = new Set(before.wordNotes.map((n) => n.key));
+    const add = keys.filter((k) => !have.has(k)).map((key) => ({ key, lesson, date: new Date() }));
+    if (add.length) update.$push = { wordNotes: { $each: add } };
+  }
   const profile = await Profile.findByIdAndUpdate(req.params.id, update, { new: true, runValidators: true });
   if (!profile) return res.status(404).json({ message: 'Profile not found' });
   res.json(profile);
 });
 
 // Save a word to "My words" with its meaning and the kid's own sentence:
-// { key, en, hi, sentence }. Saving the same word again replaces its note.
+// { key, en, hi, sentence, lesson }. Saving the same word again replaces its note (keeping its lesson).
 router.post('/:id/words', async (req, res) => {
   const text = (v, max) => (typeof v === 'string' ? v.trim().slice(0, max) : '');
   const key = text(req.body.key, 60);
   if (!key) return res.status(400).json({ message: 'key is required' });
-  const note = { key, en: text(req.body.en, 60), hi: text(req.body.hi, 200), sentence: text(req.body.sentence, 300), date: new Date() };
+  const note = { key, en: text(req.body.en, 60), hi: text(req.body.hi, 200), sentence: text(req.body.sentence, 300), lesson: text(req.body.lesson, 60), date: new Date() };
   // two steps on the same document: drop the old note, then add the new one
   const found = await Profile.findByIdAndUpdate(req.params.id, { $pull: { wordNotes: { key } } });
   if (!found) return res.status(404).json({ message: 'Profile not found' });
+  note.lesson ||= found.wordNotes.find((n) => n.key === key)?.lesson || '';
   const profile = await Profile.findByIdAndUpdate(
     req.params.id,
     { $addToSet: { difficult: key }, $push: { wordNotes: note } },

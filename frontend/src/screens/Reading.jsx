@@ -210,7 +210,7 @@ export default function Reading({ params, profile, kind = 'stories' }) {
   }
 
   const saveChosen = () => {
-    dispatch(setDifficult({ id: profile._id, keys: chosenWords.map((c) => c.key), on: true }))
+    dispatch(setDifficult({ id: profile._id, keys: chosenWords.map((c) => c.key), on: true, lesson: lessonId }))
     setShowChosen(true)
     // read them out one by one: English, then Hindi
     speak(
@@ -494,7 +494,7 @@ export default function Reading({ params, profile, kind = 'stories' }) {
         </button>
       </div>
 
-      {picked && <WordSheet text={picked.text} entry={picked.entry} onClose={() => setPicked(null)} />}
+      {picked && <WordSheet text={picked.text} entry={picked.entry} lesson={lessonId} onClose={() => setPicked(null)} />}
     </section>
   )
 }

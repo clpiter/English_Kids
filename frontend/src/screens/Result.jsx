@@ -15,7 +15,12 @@ export default function Result({ params }) {
   const { activity, category, lesson, results = [] } = params
   // book games come back to their lesson, category games to their category
   const again = lesson ? go({ screen: 'bookActivity', params: { lesson, activity } }) : go({ screen: 'activity', params: { activity, category } })
-  const others = lesson ? go({ screen: 'book', params: { lesson } }) : go({ screen: 'category', params: { category } })
+  // games with My words go back to the My words tab
+  const others = lesson
+    ? go({ screen: 'book', params: { lesson } })
+    : category === 'difficult'
+      ? go({ screen: 'words' })
+      : go({ screen: 'category', params: { category } })
 
   const total = results.length
   const correct = results.filter((r) => r.correct).length
