@@ -144,6 +144,9 @@ export default function Reading({ params, profile, kind = 'stories' }) {
     hiAloud.stop()
   }
 
+  // words the kid saved in My words: shown in their own colour in the lesson
+  const mineSet = new Set(profile.difficult || [])
+
   // words of this lesson still waiting in "Say the word" practice
   const missedHere = []
   const missedSet = new Set(profile.missedWords || [])
@@ -342,7 +345,7 @@ export default function Reading({ params, profile, kind = 'stories' }) {
             (tok, i) => (
               <button
                 key={i}
-                className={`rw ${tok.entry?.word ? 'rw-key' : ''} ${tok.entry ? '' : 'rw-unknown'} ${
+                className={`rw ${tok.entry?.word ? 'rw-key' : ''} ${tok.type === 'word' && mineSet.has(difficultKey(tok.entry, tok.text)) ? 'rw-mine' : ''} ${tok.entry ? '' : 'rw-unknown'} ${
                   chosen.includes(i) ? 'rw-chosen' : ''
                 } ${readAlong.tokenState[i] === 'read' ? 'rw-read' : ''} ${readAlong.tokenState[i] === 'next' ? 'rw-next' : ''} ${
                   readAloud.current === i ? 'rw-speaking' : ''
