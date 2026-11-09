@@ -4404,3 +4404,105 @@ h3 {
   margin: 8px 0 0;
   font-size: 0.9rem;
 }
+
+/* ---------- small phones (e.g. vivo 1906, 360px; less with bigger text / page zoom) ---------- */
+/* the menu tabs always share the width: a long label shrinks or cuts, it never pushes "Progress" off screen */
+.tabbar {
+  max-width: 100%;
+  overflow: hidden;
+}
+@media (max-width: 900px) {
+  .tab {
+    min-width: 0;
+  }
+  .tab-label,
+  .tab-label .bi,
+  .tab-label .bi > * {
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* room for Hindi vowel marks above and below the letters */
+    line-height: 1.4;
+  }
+}
+
+/* top bar: smaller buttons so the logo, theme, language, kid and admin buttons fit in one row */
+@media (max-width: 400px) {
+  .topbar {
+    padding: 6px 8px;
+    gap: 4px;
+  }
+  .brand-logo {
+    font-size: 1.6rem;
+  }
+  .topbar-right {
+    gap: 4px;
+    min-width: 0;
+  }
+  .theme-btn,
+  .theme-btn.login-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+  }
+  .theme-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+  .lang-cycle {
+    min-width: 0;
+    height: 32px;
+    padding: 0 7px;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+  .kid-chip {
+    gap: 4px;
+    padding: 2px 3px 2px 2px;
+    min-width: 0;
+  }
+  .kid-chip-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 1.05rem;
+  }
+  .kid-chip-switch {
+    width: 26px;
+    height: 26px;
+    font-size: 0.85rem;
+  }
+  .kid-chip-stars {
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  .tabbar {
+    padding: 3px 2px;
+    gap: 1px;
+  }
+  .tab {
+    padding: 3px 1px;
+    font-size: 0.68rem;
+  }
+  .tab-icon {
+    font-size: 1.15rem;
+  }
+  .tab-badge {
+    right: -8px;
+    min-width: 16px;
+    height: 16px;
+    font-size: 0.62rem;
+  }
+}
+
+/* very narrow (big text on a small phone): the owl logo makes room for the buttons */
+@media (max-width: 300px) {
+  .brand-logo {
+    display: none;
+  }
+  .tab-label .bi > :last-child {
+    font-size: 0.85em;
+  }
+}
