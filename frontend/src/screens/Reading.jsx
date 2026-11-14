@@ -424,6 +424,17 @@ export default function Reading({ params, profile, kind = 'stories' }) {
         </div>
       )}
 
+      {isBook && story.exercises?.length > 0 && (
+        <button className="card tense-link ex-link" onClick={() => nav(go({ screen: 'bookExercises', params: { lesson: story.id } }))}>
+          <span className="tense-link-icon">📝</span>
+          <span>
+            <b>{t('exTitle')}</b>
+            <span className="muted"> · {t('exLinkHint', { n: story.exercises.length })}</span>
+          </span>
+          <span className="tense-link-arrow">▶</span>
+        </button>
+      )}
+
       {isBook && (
         <div className="card book-practice">
           <h3>🎮 {t('practiseWords')}</h3>

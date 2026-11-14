@@ -18,6 +18,7 @@ const ReadingLessons = lazy(() => import('./screens/ReadingLessons'))
 const MyWords = lazy(() => import('./screens/MyWords'))
 const BookLessons = lazy(() => import('./screens/BookLessons'))
 const BookActivity = lazy(() => import('./screens/BookActivity'))
+const LessonExercises = lazy(() => import('./screens/LessonExercises'))
 const Credits = lazy(() => import('./screens/Credits'))
 const Tenses = lazy(() => import('./screens/Tenses'))
 const TenseLesson = lazy(() => import('./screens/TenseLesson'))
@@ -94,6 +95,7 @@ function AppRoutes() {
       {/* book pages: English first, then Hindi */}
       <Route path="/book" element={book(BookLessons)} />
       <Route path="/book/:lesson" element={book(BookReader)} />
+      <Route path="/book/:lesson/exercises" element={book(LessonExercises)} />
       <Route path="/book/:lesson/play/:activity" element={book(BookActivity)} />
       <Route path="/book/:lesson/play/:activity/result" element={book(Result)} />
       {/* grammar and tenses: English names first, then Hindi */}

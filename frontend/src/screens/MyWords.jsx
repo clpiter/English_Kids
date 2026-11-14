@@ -28,6 +28,24 @@ function placeOf(w, lessonById, bookLessons, stories) {
   return found ? found.id : 'other'
 }
 
+// The sentence of a lesson that has the word, and its Hindi when the Hindi lines up with the English
+// (same number of paragraphs and sentences / poem lines). { en, hi } or null.
+const splitEn = (p) => p.match(/[^.!?\n]+[.!?]*["'”’]?/g)?.map((s) => s.trim()).filter(Boolean) || []
+const splitHi = (p) => p.match(/[^।!?\n]+[।!?]*["'”’]?/g)?.map((s) => s.trim()).filter(Boolean) || []
+function sentenceIn(en, lesson) {
+  if (!lesson?.en) return null
+  const enParas = lesson.en.split(/\n\s*\n/)
+  const hiParas = (lesson.hi || '').split(/\n\s*\n/)
+  for (let p = 0; p < enParas.length; p++) {
+    const sentences = splitEn(enParas[p])
+    const i = sentences.findIndex((s) => inText(en, s))
+    if (i < 0) continue
+    const hiSentences = hiParas.length === enParas.length ? splitHi(hiParas[p]) : []
+    return { en: sentences[i], hi: hiSentences.length === sentences.length ? hiSentences[i] : '' }
+  }
+  return null
+}
+
 // "My words" tab: words the kid chose as difficult, with pronunciation and meaning.
 // Search to add any word from the app.
 export default function MyWords({ profile }) {
@@ -55,6 +73,59 @@ export default function MyWords({ profile }) {
     const place = placeOf(w, lessonById, book.lessons, stories)
     byPlace.set(place, [...(byPlace.get(place) || []), w])
   }
+  // "Download my words": every saved word with its meaning, the kid's own note, where it came from
+  // and a sentence from that lesson (or the word list's example sentence), as a JSON file
+  const download = () => {
+    const bookById = new Map(books.map((b) => [b.id, b]))
+    const catById = new Map(categories.map((c) => [c.id, c]))
+    const list = mine.map((w) => {
+      const place = placeOf(w, lessonById, book.lessons, stories)
+      const lesson = lessonById.get(place)
+      const cat = place.startsWith('cat:') ? catById.get(place.slice(4)) : null
+      const from = lesson
+        ? lesson.bookId
+          ? { book: bookById.get(lesson.bookId)?.title || lesson.bookId, lesson: lesson.title, lessonHi: lesson.titleHi }
+          : { learnTab: 'Story', lesson: lesson.titleEn, lessonHi: lesson.titleHi }
+        : cat
+          ? { learnTab: cat.en, learnTabHi: cat.hi }
+          : null
+      // the lesson it came from first, then the word list's own example, then any book lesson or story
+      const found =
+        (lesson && sentenceIn(w.en, lesson)) ||
+        (w.word?.sentenceEn ? { en: w.word.sentenceEn, hi: w.word.sentenceHi || '' } : null) ||
+        [...book.lessons, ...stories].reduce((hit, l) => hit || sentenceIn(w.en, l), null)
+      // a meaning even for words saved without one: the glossary (also the singular, crayons → crayon),
+      // or the lesson's own word list
+      const en = w.en.toLowerCase()
+      const singular = [en.replace(/ies$/, 'y'), en.replace(/es$/, ''), en.replace(/s$/, '')]
+      const meaning =
+        w.hi ||
+        [en, ...singular].map((x) => glossary[x]?.[0]).find(Boolean) ||
+        [lesson, ...book.lessons]
+          .flatMap((l) => l?.words || [])
+          .find(([x]) => [en, ...singular].includes(x.toLowerCase()))?.[1] ||
+        ''
+      const example = found
+      return {
+        word: w.en,
+        meaning,
+        ...(w.say ? { sayItLike: w.say } : {}),
+        ...(w.sentence ? { mySentence: w.sentence } : {}),
+        ...(from ? { from } : {}),
+        ...(example ? { sentenceFromLesson: example.en, ...(example.hi ? { sentenceHindi: example.hi } : {}) } : {}),
+      }
+    })
+    const data = { app: 'English Masti', name: profile.name, downloadedAt: new Date().toISOString(), count: list.length, words: list }
+    const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }))
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `my-words-${(profile.name || 'kid').replace(/[^\p{L}\p{N}]+/gu, '-')}.json`
+    document.body.appendChild(a)
+    a.click()
+    a.remove()
+    setTimeout(() => URL.revokeObjectURL(url), 1000)
+  }
+
   const filled = (list) => list.filter((x) => x.words?.length)
   const groups = filled(
     [
@@ -126,6 +197,11 @@ export default function MyWords({ profile }) {
       <div className="card">
         <h1>⭐ {t('myWords')}</h1>
         <p className="muted">{t('myWordsIntro')}</p>
+        {mine.length > 0 && (
+          <button className="btn btn-light dw-download" onClick={download}>
+            ⬇️ {t('myWordsDownload')}
+          </button>
+        )}
         <input
           className="text-input search-input"
           type="search"

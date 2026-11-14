@@ -4506,3 +4506,168 @@ h3 {
     font-size: 0.85em;
   }
 }
+
+/* ---------- "Activity from lesson": the textbook's questions after a lesson ---------- */
+.ex-link {
+  margin-bottom: 12px;
+}
+.ex-head h1 {
+  margin: 0 0 4px;
+}
+.ex-tip {
+  font-size: 0.9rem;
+}
+.ex-tools {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+.ex-score {
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--soft);
+}
+.ex-section {
+  margin-top: 14px;
+}
+.ex-title {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+.ex-kind {
+  flex-shrink: 0;
+}
+.ex-item {
+  display: flex;
+  gap: 8px;
+  padding: 10px 0;
+  border-top: 1px dashed var(--line);
+}
+.ex-num {
+  flex-shrink: 0;
+  min-width: 1.6em;
+  font-weight: 800;
+  color: var(--muted);
+}
+.ex-body {
+  flex: 1;
+  min-width: 0;
+}
+.ex-line {
+  display: block;
+  line-height: 1.6;
+}
+.ex-hi {
+  display: block;
+  color: var(--hi);
+  font-size: 0.95em;
+  margin-top: 2px;
+}
+.tap-text .tw {
+  cursor: pointer;
+  border-radius: 6px;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+}
+.tap-text .tw:hover {
+  background: var(--en-soft);
+}
+.tap-text .tw-key {
+  color: var(--en);
+  font-weight: 700;
+}
+.ex-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+.ex-choices.row {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.ex-choice {
+  text-align: left;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 2px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.ex-choice.small {
+  font-weight: 700;
+}
+.ex-choice.picked {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+.ex-choice.right {
+  border-color: var(--good);
+  background: color-mix(in srgb, var(--good) 22%, var(--card));
+}
+.ex-choice.wrong {
+  border-color: var(--bad);
+  background: color-mix(in srgb, var(--bad) 18%, var(--card));
+}
+.ex-choice:disabled {
+  cursor: default;
+  opacity: 1;
+}
+.ex-wrong-note {
+  color: var(--bad);
+  font-weight: 700;
+}
+.ex-answer {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin-top: 8px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--good) 14%, var(--card));
+}
+.ex-show,
+.ex-check {
+  margin-top: 8px;
+}
+.ex-match {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px;
+}
+.ex-match-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ex-passage {
+  margin-bottom: 10px;
+}
+.ex-passage details {
+  margin-top: 8px;
+}
+.ex-passage-text {
+  white-space: pre-line;
+}
+/* section number and heading on one line; the Hindi line still goes below */
+.ex-title .ex-line {
+  display: inline;
+}
+.ex-title .ex-hi {
+  display: block;
+}
+
+.dw-download {
+  margin-top: 8px;
+}

@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom'
 //   /category/:category/play/:activity/result
 //   /reading, /reading/:lesson             reading lessons, e.g. /reading/animals-1
 //   /book, /book/:lesson                   the reading books (?book=santoor|class8) and one lesson
+//   /book/:lesson/exercises                "Activity from lesson": the textbook's questions and activities
 //   /book/:lesson/play/:activity           a game with that lesson's words (?words=mine|all)
 //   /grammar, /grammar/:structure          sentence structures (easy to hard) and one structure
 //   /grammar/:structure/practice           structure games (?mode=fill..., structure "mix" = all)
@@ -29,6 +30,7 @@ const PATHS = {
   result: (p) => `/category/${p.category}/play/${p.activity}/result`,
   reading: (p) => (p.lesson ? `/reading/${p.lesson}` : p.category ? `/reading?category=${p.category}` : '/reading'),
   book: (p) => (p.lesson ? `/book/${p.lesson}` : p.book ? `/book?book=${p.book}` : '/book'),
+  bookExercises: (p) => `/book/${p.lesson}/exercises`,
   bookActivity: (p) => `/book/${p.lesson}/play/${p.activity}${p.words ? `?words=${p.words}` : ''}`,
   bookResult: (p) => `/book/${p.lesson}/play/${p.activity}/result`,
   grammar: () => '/grammar',
