@@ -801,7 +801,7 @@ const books = [book, book6, book7, book8];
 for (const b of books) for (const l of b.lessons) l.bookId = b.id;
 
 // "Activity from lesson": the textbook's questions and activities after each lesson (by lesson id)
-const exercises = { ...require('./book3ex').exercises, ...require('./book8ex').exercises };
+const exercises = { ...require('./book3ex').exercises, ...require('./book6ex').exercises, ...require('./book7ex').exercises, ...require('./book8ex').exercises };
 for (const b of books) for (const l of b.lessons) if (exercises[l.id]) l.exercises = exercises[l.id];
 
 module.exports = { book, books };
